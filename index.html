@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="V-Lab.....Search Algorithms....Linear Search and Binary Search">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Algorithms</title>
+    <link rel="icon" href="images/vlab-logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/base16/harmonic16-dark.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.8/clipboard.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+    
+</head>
+<body>
+    <header class="header1">
+        <div class="div1">
+            <img class="logo" src="images/logo.png" height="60px" alt="VLab">
+            <h1>V-LAB@ANDC</h1>
+        </div>
+        <ul class="ul1">
+            <li><a href="https://www.vlab.andcollege.du.ac.in">Home</a></li>
+            <li><a href="https://www.vlab.andcollege.du.ac.in#labs_section">Labs</a></li>
+            <li><a href="https://www.vlab.andcollege.du.ac.in#team">Team</a></li>
+            <li><a href="https://www.andcollege.du.ac.in">College Website</a></li>
+        </ul>
+    </header>
+    <div class="h1title">
+        <h1>Search Algorithms</h1>
+    </div>
+    <div class="pageview">
+        <nav>
+            <div class="divbox">
+                <a class="link" href="#aim">
+                    <img class="icon" src="images/Aim_img.png" height="60px" alt="AIM"><br>Aim
+                </a>
+            </div>
+            <div class="divbox">
+                <a class="link" href="#theory">
+                    <img class="icon" src="images/theory_img.png" height="60px" alt="THEORY"><br>Theory
+                </a>
+            </div>
+            <div class="divbox">
+                <a class="link" href="#procedure">
+                    <img class="icon" src="images/procedure_img.png" height="60px" alt="PROCEDURE" ><br>Procedure
+                </a>
+            </div>
+            <div class="divbox">
+                <a class="link" href="#practice">
+                    <img class="icon" src="images/practice_img.png" height="60px" alt="PRACTICE"><br>Practice
+                </a>
+            </div>
+            <div class="divbox">
+                <a class="link" href="#code">
+                    <img class="icon" src="images/code_img.png" height="60px" alt="CODES"><br>Codes
+                </a>
+            </div>
+            <div class="divbox">
+                <a class="link" href="#result">
+                    <img class="icon" src="images/result_img.png" height="60px" alt="RESULT"><br>Result
+                </a>
+            </div>
+            <div class="divbox">
+                <a class="link" href="#quiz" >
+                    <img class="icon" src="images/quiz_img.png" height="60px" alt="QUIZ"><br>Quiz
+                </a>
+            </div>
+            <div class="divbox">
+                <a class="link" href="#reference">
+                    <img class="icon" src="images/reference_img.png" height="60px" alt="REFERENCE"><br>Reference
+                </a>
+            </div>
+
+        </nav>
+        <section class="practical">
+
+            <div class="container" id="aim">
+                <div class="title">
+                    Aim
+                </div>
+                <div class="content">
+                    <p>
+                        The aim of this practical is to implement an adaptive search algorithm that automatically performs linear search for unsorted collections and binary search for sorted collections.
+                    </p>
+                </div>
+                
+            </div>
+            <div class="container" id="theory">
+                <div class="title">
+                    Theory
+                </div>
+                <div class="content">
+                    <p>
+                        The adaptive search algorithm combines the efficiency of binary search for sorted collections and the simplicity of linear search for unsorted collections. It determines the nature of the given collection by checking if it is sorted or unsorted. Based on the result, it applies the appropriate search algorithm. If the collection is sorted, it performs binary search; otherwise, it resorts to linear search. 
+                    </p>
+                </div>
+            </div>
+            <div class="container" id="procedure">
+                <div class="title">
+                    Procedure
+                </div>
+                <div class="content" id="proce">
+                    <p>
+                        The procedure for implementing the adaptive search algorithm can be summarized as follows:
+                    </p>
+                    <ol id="steps" type="1">
+                        <li>Start by defining the target element that you want to find in the collection.</li>
+                        <li>Check if the collection is sorted:
+                            <ol type="a">
+                                <li>If the collection is sorted, apply the binary search algorithm.</li>
+                                <li>If the collection is unsorted, apply the linear search algorithm.</li>
+                            </ol>
+                        </li>
+                        <li>If the binary search algorithm is applied:
+                            <ol type="i">
+                                <li>Initialize the search range, which initially includes the entire sorted collection.</li>
+                                <li>Divide the search range in half and compare the target element with the middle element of the range.</li>
+                                <li>Adjust the search range based on the comparison, reducing it by half with each iteration until the target element is found or the search range is empty.</li>
+                                <li>If the target element is found, return the index of the element. If the search range is empty, conclude that the element is not present.</li>
+                            </ol>
+                        </li>
+                        <li>If the linear search algorithm is applied:
+                            <ol type="i">
+                                <li>Iterate through each element in the unsorted collection, comparing it to the target element.</li>
+                                <li>If a match is found, return the index of the element. If the entire collection is traversed without finding a match, conclude that the element is not present.</li>
+                            </ol>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+            <div class="container" id="code">
+        <div class="title">Code</div>
+        <p> Example programs:</p>
+        <div class="buttons">
+            <!-- <button onclick="switchCodeLanguage('cpp')">C++</button>
+            <button onclick="switchCodeLanguage('python')">Python</button> -->
+            <button id="codeChange"><b><strong id="cbtclr">C++</strong> &#8594; Python</b></button>
+        </div>
+
+        <pre id="cppCode">
+            <code class="language-cpp">
+// programming language C++.
+#include < iostream >
+using namespace std;
+
+int linearSearch(const int* arr, int size, int target) {
+    for (int i = 0; i < size; ++i) {
+        if (arr[i] == target)
+            return i;  // Found the target
+    }
+    return -1;  // Target not found
+}
+int binarySearch(const int* arr, int size, int target) {
+    int left = 0;
+    int right = size - 1;
+
+    while (left <= right) {
+        int mid = left + (right - left) / 2;
+
+        if (arr[mid] == target)
+            return mid;  // Found the target
+
+        if (arr[mid] < target)
+            left = mid + 1;
+        else
+            right = mid - 1;
+    }
+
+    return -1;  // Target not found
+}
+struct Search{
+    /*
+    Defines a structure named 'Search' that is used to represent search results or items.
+    The 'Search' structure has two members:
+
+    'index' (integer): Represents the index or position of a search result or item.
+    'sorted' (integer): Indicates whether the search result or item is sorted.
+    This structure can be utilized to organize and store information
+        related to search operations, such as maintaining the index and sorted
+        status of search results in a collection or array.
+    */
+        int index;
+        int sorted;
+    };
+Search adaptiveSearch(const int* arr, int size, int target){
+
+    Search searchResult;
+    searchResult.sorted =0;
+    searchResult.index =-1;
+    // Check if the array is sorted
+    bool isSorted = true;
+    for (int i = 1; i < size; ++i) {
+        if (arr[i] < arr[i - 1]) {
+            isSorted = false;
+            break;
+        }
+    }
+    
+    if (isSorted){
+        searchResult.index =  binarySearch(arr, size, target);
+        searchResult.sorted = 1;
+        return  searchResult;}
+    else{
+        searchResult.index =  linearSearch(arr, size, target);
+        searchResult.sorted = 0;
+        return  searchResult;}
+}
+int main() {
+    int sizeA,target,value;//sizeB,
+    cin>>sizeA;//sizeB;
+    int collection[sizeA] ;
+    cout<<"Enter your array:\n";  
+    for (int i = 0;i< sizeA;i++){ 
+        cin>>value;
+        collection[i]=value; } 
+        cout<<"Enter the target: ";    cin>>target;
+
+    Search result = adaptiveSearch(collection, sizeof(collection) / sizeof(collection[0]), target);
+
+
+    if(result.sorted){
+    if (result.index != -1){
+        cout << "Binary search: Found at index " << result.index << endl;}
+    else{
+        cout << "Binary search: Not found" << endl;}
+    }
+    else{
+        if (result.index != -1){
+        cout << "Linear search: Found at index " << result.index << endl;}
+    else{
+        cout << "Linear search: Not found" << endl;}
+    }
+}
+
+            </code>
+        </pre>
+        
+        <button class="copy-button" id="ccb" data-clipboard-target="#cppCode">Copy</button>
+        <pre id="pyCode" >
+            <code class="language-python">
+#Programminng language Python.
+def linear_search(arr, target):
+    """
+    Performs linear search on the given array to find the target element.
+
+    Args:
+        arr (list): The list to be searched.
+        target: The element to be found in the array.
+
+    Returns:
+        int: The index of the target element if found, -1 otherwise.
+    """
+    for i in range(len(arr)):
+        if arr[i] == target:
+            return i  # Target element found, return the index
+    return -1  # Target element not found
+
+
+def binary_search(arr, target):
+    """
+    Performs a binary search on the given sorted array to find the target element.
+
+    Args:
+        arr (list): The sorted list to be searched.
+        target: The element to be found in the array.
+
+    Returns:
+        int: The index of the target element if found, -1 otherwise.
+    """
+    low = 0
+    high = len(arr) - 1
+
+    while low <= high:
+        mid = (low + high) // 2
+
+        if arr[mid] == target:  # Target element found at the middle index
+            return mid
+        elif arr[mid] < target:  # Target element is in the upper half of the array
+            low = mid + 1
+        else:  # Target element is in the lower half of the array
+            high = mid - 1
+
+    return -1  # Target element not found in the array
+
+            </code>
+        </pre>
+        <button class="copy-button" id="pcb" data-clipboard-target="#pyCode">Copy</button>
+    </div>          
+
+
+            
+            <div class="container" id="practice">
+                <div class="title">
+                    <h2>Practice</h2>
+                </div>
+                <div class="content">
+                    <div class="desc1">
+                        <p class="desc"><b><u>Example :</u></b><br><br>
+                        <b>If the Array is unsorted it performs Linear Search : </b><br><br>
+                        Suppose that the input array is = <b>[10, 13, 9, 18, 5, 11]</b> <br> We have to find the element <b>18</b> in the array. <br><br></p>
+                        <div class="anime" id="linearanime">
+                            <img id="lsEx" src="images/LinearSearch 01.png" alt="Example of Linear Search">
+                        </div>
+                        <br><br><br>
+                        <p><b>If the Array is sorted it performs Binary Search : </b><br><br>
+                        Suppose that the input array is = <b>[17, 32, 45, 53, 57, 61, 79, 88]</b> <br> We have to find the element <b>78</b> in the array. <br><br></p>
+                        <div class="anime" id="binaryanime" >
+                            <div class="stepsP">
+                                <ol type="a">
+                                    <li>Mid index: (0 + 7) / 2 = 3</li>
+                                    <li>Since 53 is less than the target value of 79, we narrow down the search range to the right half of the array.</li>
+                                    <li>Mid index: (4 + 7) / 2 = 5</li>
+                                    <li>Since 61 is less than the target value of 79, we again narrow down the search range to the right half of the remaining elements.</li>
+                                    <li>Mid index: (6 + 7) / 2 = 6</li>
+                                    <li>The mid-value is equal to the target value of 79, so the search is successful. The index 6 represents the position of the target value 79 in the sorted array.</li>
+                                </ol>
+                            </div>
+                            
+                                <img id="bsEx" src="images/BinarySearch 02.png" alt="Example of Binary Search">
+                            
+                        </div>
+                        <br><br><br>
+                    </div>
+                        <br><br><br>
+                    </div>
+                    <div class="your-turn" id="your_turn">
+                        <p id="para1"><b><u>Your Turn : </u></b></p><br>
+                        <label for="arrayInput">Enter an array (comma-separated):</label>
+                        <input type="text" id="arrayInput" placeholder="e.g., 1, 2, 3, 4, 5">
+                    
+                        <label for="targetInput">Enter a target element:</label>
+                        <input type="text" id="targetInput" placeholder="e.g., 3">
+                    
+                        <button class="sbt" id="searchbt"onclick="performSearch()">Search</button>
+                    
+                        <div class="array-container" id="arrayContainer"></div>
+                    
+                        <div id="resultsContainer"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="container" id="result">
+                <div class="title">
+                    Result
+                </div>
+                <div class="content">
+                    <p>
+                        The adaptive search algorithm will either return the index of the target element if it is found in the collection or -1 if the element is not present
+                    </p>
+                </div>
+            </div>
+            
+            
+            <div class="container" id="quiz">
+                <h1>Quiz</h1>
+                <p id="question"></p>
+                <div id="choices" class="choices"></div>
+                <button id="next-btn" class="next-button">Next</button>
+            </div>
+
+            <div class="container" id="Applicatiion">
+                <div class="title">
+                    Applications
+                </div>
+                <div class="content">
+                    <p>
+                        Search algorithms, such as linear search and binary search, are fundamental concepts with various applications in computer science and real-world scenarios.<br> Here are some common applications:
+                    </p>
+                    <ul class="stepsP">
+                        <li><strong>Database Systems:</strong> Search algorithms are widely used in database systems to efficiently retrieve information based on search queries.</li>
+                        <li><strong>Information Retrieval:</strong> Search algorithms power search engines, helping users find relevant information on the web.</li>
+                        <li><strong>Sorting and Searching in Libraries:</strong> These algorithms are used in libraries to organize and retrieve books efficiently.</li>
+                        <li><strong>Network Routing:</strong> In networking, search algorithms play a crucial role in determining optimal routes for data transmission.</li>
+                        <li><strong>Game Development:</strong> Search algorithms are utilized in games to find paths, search for objects, or make decisions based on game states.</li>
+                    </ul>
+                    <p>
+                        These applications demonstrate the versatility and importance of search algorithms in various domains of computing.
+                    </p>
+                </div>
+            </div>
+            <div class="container" id="references">
+                <div class="title">
+                    References
+                </div>
+                <div class="content">
+                    
+                    <p>Here are some references for further exploration:</p>
+                    <ul class="stepsP" >
+                        <li> <a href="https://ds1-iiith.vlabs.ac.in/exp/unsorted-arrays/overview.html"> Virtual Labs Data Structures – 1</a></li>
+                       
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/highlightjs-line-numbers.js/dist/highlightjs-line-numbers.min.js"></script>
+    <script>
+        hljs.highlightAll();
+        hljs.initLineNumbersOnLoad();
+    </script>
+</body>
+
+</html>

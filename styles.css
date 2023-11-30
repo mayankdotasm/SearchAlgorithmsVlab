@@ -1,0 +1,570 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+::selection {
+    color: rgb(11, 0, 48);
+    background: rgba(109, 247, 109, 0.675)
+}
+
+body {
+    background-color: rgba(238, 234, 234, 0.603);
+    font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+    overflow-x: hidden;
+}
+
+header {
+    height: 14vh;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background: rgb(0, 52, 65);
+    text-align: center;
+    box-shadow: 0 4px 8px 0 rgba(233, 12, 12, 0.2), 0 1px 15px 0 rgba(255, 0, 0, 0.19);
+}
+
+header div {
+    display: flex;
+    flex-direction: row;
+    width: 30%;
+    font-size: 0.7rem;
+    color: white;
+}
+
+header > div > h1 {
+    margin-top: 15px;
+    margin-left: 85px;
+}
+
+header .logo {
+    height: 4rem;
+    width: 4.2rem;
+    border-radius: 50%;
+    margin: 1% 1%;
+}
+
+header .ul1 {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+}
+
+header .ul1 li {
+    font-size: 20px;
+    list-style: none;
+    margin-left: 20px;
+    padding: 13px 20px;
+}
+
+header .ul1 li:hover {
+    background: rgba(0, 139, 139, 0.74);
+    cursor: pointer;
+    border-radius: 15px;
+}
+
+header .ul1 li a {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    font-weight: 400;
+    border-radius: 3px;
+}
+
+@media screen and (max-width: 1000px) {
+    .div3 {
+        margin: 24px 20px;
+    }
+
+    header {
+        height: 13vh;
+        width: 100%;
+        background: rgb(0, 52, 65);
+        display: flex;
+        flex-direction: column;
+    }
+
+    header .logo {
+        height: 35px;
+        width: 35px;
+    }
+    .div1 {
+        text-align: center;
+    }
+
+    .logo {
+        display: block;
+        margin: 0 auto;
+    }
+
+    h1 {
+        font-size: 20px;
+        white-space: nowrap;
+        margin: 0 auto;
+    }
+    header div h1 {
+        font-size: 1rem;
+        color: white;
+        margin-top: 9px;
+        margin-left: 1px;
+        padding: 1px 5px;
+    }
+
+    header .ul1 {
+        display: flex;
+        flex-direction: row;
+        gap: 1rem;
+    }
+
+    header .ul1 li {
+        font-size: 12px;
+        list-style: none;
+        margin-top: 5px;
+        margin-left: 20px;
+        padding: 1px 1px 0px 1px;
+    }
+
+    header .ul1 li:hover {
+        background: rgba(0, 139, 139, 0.74);
+        cursor: pointer;
+        border-radius: 6px;
+    }
+
+    header .ul1 li a {
+        color: rgb(255, 255, 255);
+        text-decoration: none;
+        font-weight: 400;
+        border-radius: 3px;
+    }
+    
+}
+
+.div2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+    margin-top: 90px;
+    text-align: center;
+    margin-bottom: 30px;
+    font-weight: bold;
+}
+
+nav {
+    font-size: 1rem;
+    border-radius: 20px;
+    background: rgb(0, 30, 37);
+    height: fit-content;
+    margin: 40px 25px;
+    justify-content: space-evenly;
+    display: flex;
+    flex-flow: wrap;
+    color: rgb(138, 139, 138);
+    font-weight: bolder;
+    box-shadow: 0 4px 8px 0 rgba(233, 12, 12, 0.2), 0 6px 20px 0 rgba(255, 0, 0, 0.19);
+}
+
+nav .divbox {
+    height: 105px;
+    width: 114px;
+    transition: 0.7s ease-out;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin: 1rem;
+    border: 2.5px solid rgb(215, 211, 211);
+    border-radius: 20px;
+    box-shadow: 0 2px 2px 0 rgb(224, 224, 224);
+}
+
+nav .divbox:hover {
+    background: rgba(7, 238, 238, 0.589);
+    color: white;
+}
+
+nav .divbox a {
+    display: block;
+    margin: auto;
+    text-decoration: none;
+    color: white;
+}
+
+nav .divbox img {
+    margin-top: 10px;
+}
+.h1title{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+    margin-top: 90px;
+    text-align: center;
+    margin-bottom: 30px;
+    font-weight: bold;
+}
+/* container tiles */
+.container {
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    margin: 20px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    background-color: #fff;
+}
+
+.container .title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.container .content {
+    font-size: 1rem;
+}
+
+.container p {
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+.container ol {
+    margin-left: 20px;
+}
+
+.container li {
+    margin-bottom: 5px;
+}
+
+#proce {
+    font-size: 16px;
+    padding-left: 10%;
+}
+#pyCode,#pcb{
+    display: none;
+}
+.your-turn {
+    margin-top: 20px;
+}
+
+
+
+.your-turn label,
+.your-turn input {
+    max-width: 100%;
+}
+
+.your-turn {
+    margin-top: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    justify-content: center;
+}
+
+.your-turn p {
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.your-turn label {
+    font-weight: bold;
+    display: block;
+    margin-top: 10px;
+    font-size: 1rem;
+}
+
+#arrayInput,
+#targetInput {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    margin-top: 5px;
+}
+
+ /* {
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.3s, color 0.3s;
+} */
+#resultsContainer {
+    margin-top: 20px;
+    font-size: 1rem;
+}
+
+.desc1,
+.your-turn {
+    text-align: justify;
+    margin-top: 20px;
+    margin-bottom: 20px;
+
+}
+
+.desc1 {
+    max-width: 100%;
+    height: 50%;
+    margin: 0 auto;
+    overflow-x: auto;
+}
+.stepsP {
+    overflow-x: auto;
+    display:flex ;
+    flex-direction:column;
+}
+
+.anime {
+    margin: 0 auto;
+    margin-left: 10%;
+}
+@media (max-width: 768px) {
+    .desc1 img,
+    .your-turn .animation img {
+        width: 60%;
+        max-width: none;
+    }
+    .desc1 {
+        padding: 10px;
+    }.stepsP {
+        overflow-x: auto;
+        display:flex ;
+        flex-direction:column;
+    }
+}
+
+#codeChange{
+    padding: 1%;
+}
+#cbtclr{
+    color: chartreuse;
+}
+.codes button , #codeChange{
+    padding: 10px 20px;
+    background-color: #0011ff;
+    color: #fbfbfb;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+#codeChange {
+    background-color: #003441;
+    color: #ffffff;
+}
+
+.codes button B {
+    text-align: center;
+}
+.copy-button {
+    background-color: #256fd0;
+    color: #ffffff;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    margin-bottom: 10px;
+    transition: background-color 0.3s;
+    display: inline-flex;
+    align-items: center;
+}
+
+
+
+.copy-button i {
+    margin-right: 8px;
+}
+
+
+.copy-button.hide {
+    display: none;
+}
+.anime {
+    width: 480px;
+    aspect-ratio: 3/1;
+}
+
+#submit {
+    font-size: 1rem;
+    padding: 4px 4px 4px 4px;
+    margin: 10px 10px 10px 200px;
+}
+
+#searchSteps {
+    margin: 10px 10px 10px 200px;
+}
+
+/* Quiz styles */
+.box {
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    background-color: #f7f7f7;
+    text-align: left;
+}
+
+h2 {
+    font-size: 24px;
+    color: rgb(0, 0, 0);
+}
+
+h4 {
+    font-size: 14px;
+    color: #777;
+}
+
+#question {
+    font-size: 18px;
+    margin-top: 20px;
+}
+
+.choices {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    margin-top: 20px;
+}
+
+.choices .choice {
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px solid rgb(12, 12, 12);
+    border-radius: 6px;
+    background-color: rgb(255, 255, 255);
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.choices .choice:hover {
+    background-color: rgb(52, 134, 241);
+    color: #fff;
+}
+
+
+.codes button,
+#next-btn,#searchbt {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.codes button:hover,
+#next-btn:hover,#searchbt:hover {
+    background-color: #6725d0;
+}
+#Applicatiion .content {
+    font-size: 18px;
+    color: #191919;
+}
+
+#Applicatiion p {
+    margin-bottom: 15px;
+}
+
+#Applicatiion ul {
+    margin-bottom: 15px;
+}
+
+#Applicatiion li {
+    margin-bottom: 8px;
+}
+#references p {
+    font-size: 18px;
+    font-weight: bold;
+    color: #191919;
+}
+
+#references ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+#references li {
+    margin: 10px 0;
+}
+
+#references a {
+    text-decoration: none;
+    color: #0077cc;
+    transition: color 0.3s ease;
+}
+#references a:hover {
+    color: #004466;
+}
+
+
+.array-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.array-element {
+    padding: 10px;
+    margin: 5px;
+    border: 1px solid #000;
+    text-align: center;
+}
+
+.unchecked {
+    background-color: white;
+}
+
+.checked {
+    background-color: red;
+}
+
+.uniterated {
+    background-color: grey;
+}
+
+.found {
+    background-color: green;
+    animation: blinker 0.5s linear infinite;
+}
+
+@keyframes blinker {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.copy-button {
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.copy-button:hover {
+    background-color: #1a2230;
+}
+
+/* Quiz Styles */
+.choices {
+    margin-top: 30px;
+}
+
+#next-btn {
+    margin-top: 30px;
+}
+
