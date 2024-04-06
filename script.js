@@ -3,7 +3,12 @@ function performSearch() {
     const targetInput = document.getElementById("targetInput").value;
 
     const array = arrayInput.split(",").map(Number);
-    const target = parseInt(targetInput);
+    // console.log(array)
+    // console.log(null in array)
+    // if (NaN in array){
+    //     Windowalert("\n Enter numeric values only!!")
+    // }
+    const target = parseFloat(targetInput);
 
     const isSorted = checkSort(array);
 
@@ -18,44 +23,6 @@ function performSearch() {
 
     displayResults([`Performing ${searchType}...`]);
 }
-
-
-// const codeBlocks = document.querySelectorAll('pre code');
-
-    
-
-
-// function switchCodeLanguage(language) {
-//     const cppCode = document.getElementById("cppCode");
-//     const ccbt = document.getElementById("ccb");
-//     const pyCode = document.getElementById("pyCode");
-//     const pcbt = document.getElementById("pcb");
-
-//     if (language === "cpp") {
-//         cppCode.style.display = "block";
-//         ccbt.style.display = "block";
-
-//         pyCode.style.display = "none";
-//         pcbt.style.display = "none";
-
-
-//     } else if (language === "python") {
-//         cppCode.style.display = "none";
-//         ccbt.style.display = "none";
-
-//         pyCode.style.display = "block";
-//         pcbt.style.display = "block";
-//     }
-// }
-
-// function copyToClipboard(targetId) {
-//     const codeToCopy = document.getElementById(targetId).textContent;
-//     navigator.clipboard.writeText(codeToCopy).then(function () {
-//         alert('Code copied to clipboard!');
-//     }).catch(function (err) {
-//         console.error('Unable to copy code to clipboard', err);
-//     });
-// }
 
     
 const changeButton = document.querySelector('#codeChange');
@@ -87,7 +54,7 @@ changeButton.addEventListener('click', function () {
     }
 });
 
-// Initialize Clipboard.js for copy buttons
+
 const copyButtons = document.querySelectorAll('.copy-button');
 copyButtons.forEach(function (button) {
     new ClipboardJS(button);

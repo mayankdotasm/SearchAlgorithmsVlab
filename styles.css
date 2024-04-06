@@ -23,7 +23,8 @@ header {
     align-items: center;
     background: rgb(0, 52, 65);
     text-align: center;
-    box-shadow: 0 4px 8px 0 rgba(233, 12, 12, 0.2), 0 1px 15px 0 rgba(255, 0, 0, 0.19);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    /* box-shadow: 0 4px 8px 0 rgba(233, 12, 12, 0.2), 0 1px 15px 0 rgba(255, 0, 0, 0.19); */
 }
 
 header div {
@@ -162,7 +163,8 @@ nav {
     flex-flow: wrap;
     color: rgb(138, 139, 138);
     font-weight: bolder;
-    box-shadow: 0 4px 8px 0 rgba(233, 12, 12, 0.2), 0 6px 20px 0 rgba(255, 0, 0, 0.19);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    /* box-shadow: 0 4px 8px 0 rgba(233, 12, 12, 0.2), 0 6px 20px 0 rgba(255, 0, 0, 0.19); */
 }
 
 nav .divbox {
