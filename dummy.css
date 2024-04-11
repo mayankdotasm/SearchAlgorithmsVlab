@@ -1,0 +1,314 @@
+/* Global styles */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif; /* Specify a fallback font */
+}
+
+/* Header styles */
+
+.header {
+    background-color: rgb(0, 30, 37);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+}
+
+.logo-container {
+    margin-right: 10px;
+}
+
+.logo {
+    height: 60px;
+    alt: "VLab";
+}
+
+.heading {
+    font-size: 1.5rem; /* Adjust heading size as needed */
+    margin-right: auto; /* Pushes the heading to the left */
+}
+
+.navigation {
+    list-style: none;
+    display: flex;
+}
+
+.navigation li {
+    margin-right: 15px;
+}
+
+.navigation li:last-child {
+    margin-right: 0; /* Remove margin from the last list item */
+}
+
+.navigation a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.navigation a:hover {
+    text-decoration: underline; /* Add underline on hover */
+}
+
+/* Pageview styles */
+
+.h1title {
+    text-align: center; /* Center-align the h1title */
+    margin-top: 20px;
+}
+
+.pageview {
+    display: flex;
+    justify-content: center; /* Center-align the navigation */
+    margin-top: 20px;
+}
+
+.pageview .navigation {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.pageview .navigation .link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 20px;
+    text-decoration: none;
+    color: #000;
+    background-color: rgba(7, 238, 238, 0.8);
+    transition: background-color 0.3s ease;
+}
+
+.pageview .navigation .link:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.pageview .navigation .link img {
+    height: 60px;
+    margin-bottom: 10px;
+}
+
+.pageview .navigation .link span {
+    font-size: 0.8rem;
+}
+
+/* Scroll behavior */
+
+.scrolled .header {
+    background-color: #fff;
+    color: #333;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+::selection {
+    color: rgb(11, 0, 48);
+    background: rgba(109, 247, 109, 0.675)
+}
+
+body {
+    background-color: rgba(238, 234, 234, 0.603);
+    font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+    overflow-x: hidden;
+}
+
+header {
+    height: 12vh;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background: rgb(0, 52, 65);
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    position: fixed;
+    top: 0; /* Position at the top of the viewport */
+    left: 0; /* Align to the left edge of the viewport */
+    width: 100%; /* Span the entire width of the viewport */
+    transition: all 0.3s ease-in-out; /* Smooth transition effect */
+    z-index: 10;
+}
+
+header div {
+    display: flex;
+    flex-direction: row;
+    width: 30%;
+    font-size: 0.7rem;
+    color: white;
+}
+
+header > div > h1 {
+    margin-top: 15px;
+    margin-left: 85px;
+}
+
+header .logo {
+    height: 4rem;
+    width: 4.2rem;
+    border-radius: 50%;
+    margin: 1% 1%;
+}
+
+header .ul1 {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+}
+
+header .ul1 li {
+    font-size: 20px;
+    list-style: none;
+    margin-left: 20px;
+    padding: 13px 20px;
+}
+
+header .ul1 li:hover {
+    background: rgba(0, 139, 139, 0.74);
+    cursor: pointer;
+    border-radius: 15px;
+}
+
+header .ul1 li a {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    font-weight: 400;
+    border-radius: 3px;
+}
+
+@media screen and (max-width: 1000px) {
+    .div3 {
+        margin: 24px 20px;
+    }
+
+    header {
+        height: 13vh;
+        width: 100%;
+        background: rgb(0, 52, 65);
+        display: flex;
+        flex-direction: column;
+    }
+
+    header .logo {
+        height: 35px;
+        width: 35px;
+    }
+    .div1 {
+        text-align: center;
+    }
+
+    .logo {
+        display: block;
+        margin: 0 auto;
+    }
+
+    h1 {
+        font-size: 20px;
+        white-space: nowrap;
+        margin: 0 auto;
+    }
+    header div h1 {
+        font-size: 1rem;
+        color: white;
+        margin-top: 9px;
+        margin-left: 1px;
+        padding: 1px 5px;
+    }
+
+    header .ul1 {
+        display: flex;
+        flex-direction: row;
+        gap: 1rem;
+    }
+
+    header .ul1 li {
+        font-size: 12px;
+        list-style: none;
+        margin-top: 5px;
+        margin-left: 20px;
+        padding: 1px 1px 0px 1px;
+    }
+
+    header .ul1 li:hover {
+        background: rgba(0, 139, 139, 0.74);
+        cursor: pointer;
+        border-radius: 6px;
+    }
+
+    header .ul1 li a {
+        color: rgb(255, 255, 255);
+        text-decoration: none;
+        font-weight: 400;
+        border-radius: 3px;
+    }
+    
+}
+
+
+  nav {
+    font-size: 1rem;
+    border-radius: 20px;
+    background: rgb(0, 30, 37);
+    height: fit-content;
+    justify-content: space-evenly;
+    display: flex;
+    flex-flow: wrap; /* Wrap elements if needed on smaller screens */
+    color: rgb(138, 139, 138); /* Initial text color (hidden) */
+    font-weight: bolder;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    position: inherit;
+    left: 0;
+    width: 100%;
+    transition: all 0.3s ease-in-out;
+    z-index: 10;
+  }
+  
+  nav a {
+    width: 114px; /* Adjust width as needed for your icons and text */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin: 0.5rem; /* Adjust margin as needed */
+    border: 2.5px solid rgb(215, 211, 211);
+    border-radius: 20px;
+    box-shadow: 0 2px 2px 0 rgb(224, 224, 224);
+    transition: 0.7s ease-out;
+    text-decoration: none; /* Remove underline */
+    color: transparent; /* Initial text color (hidden) */
+  }
+  
+  nav a img {
+    margin-bottom: 10px; /* Adjust spacing between icon and text */
+  }
+  
+  nav a span {
+    font-size: 0.8rem; /* Adjust text size */
+    display: block;
+  }
+  
+  nav a:hover {
+    background-color: rgba(7, 238, 238, 0.8); /* Hover background color */
+    color: #000; /* Text color on hover */
+    transform: scale(1.05); /* Optional subtle zoom on hover */
+  }
+  
+  .scrolled .navbar {
+    background-color: #fff; /* Scrolled state background color */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional subtle shadow */
+    color: #333; /* Text color after scrolling */
+  }
