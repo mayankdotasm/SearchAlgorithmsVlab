@@ -55,11 +55,11 @@ body {
   padding: 0;
 }
 header .navigation li {
-     font-size: 20px;
-    list-style: none;
-    margin-left: 20px;
-    padding: 13px 20px;
-    border-radius: 10px;
+  font-size: 20px;
+  list-style: none;
+  margin-left: 20px;
+  padding: 13px 20px;
+  border-radius: 10px;
 }
 
 header .navigation li:hover {
@@ -94,7 +94,7 @@ header .navigation a {
 .pageview {
   display: flex;
   justify-content: center;
-  
+
   padding: 10px 0;
   position: sticky;
   flex-direction: column;
@@ -158,7 +158,7 @@ header .navigation a {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 .menu-toggle {
-    display: none;
+  display: none;
 }
 /* Responsive adjustments */
 @media screen and (max-width: 840px) {
@@ -176,7 +176,7 @@ header .navigation a {
   }
   .pageview .navigation {
     margin-top: 10px;
-    padding:5px;
+    padding: 5px;
   }
 
   .pageview .navigation .link {
@@ -194,42 +194,51 @@ header .navigation a {
   .pageview .navigation .link span {
     font-size: 0.7rem;
   }
-  
- .header .smlNav .navigation {
+
+  .header .smlNav .navigation {
     display: none;
-}
-#practice{
-  overflow-x: auto;
-}
-.menu-toggle {
+  }
+  .practical {
+    padding: 10px;
+    font-size: smaller;
+  }
+  .container {
+    padding: 10px;
+    margin: 0;
+    text-align: center;
+  }
+ 
+  #practice {
+    overflow-x: auto;
+  }
+  .menu-toggle {
     display: block;
     cursor: pointer;
-}
+  }
 
-.toggle-lines {
+  .toggle-lines {
     width: 30px;
     height: 4px;
     background-color: #ffffff;
     margin: 6px 0;
-}
-.code-content{
-  overflow-x: auto;
-}
-#code.container{
-  overflow-x: scroll;
-}
-.desc1 {
+  }
+  .code-content {
+    overflow-x: auto;
+  }
+  #code.container {
+    overflow-x: scroll;
+  }
+  .desc1 {
     padding: 10px;
     overflow-x: auto;
-}
-.stepsP {
-  padding-left: 10px;
-  overflow-x: auto;
-}
-.practical{
-  padding: 5px ;
-}
-
+  }
+  .stepsP {
+    padding-left: 10px;
+    overflow-x: auto;
+  }
+  .practical {
+    padding: 5px;
+  }
 }
 
 /* Practical section */
@@ -254,6 +263,7 @@ header .navigation a {
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   background-color: #fff;
+  text-align: justify;
 }
 
 .practical .centered-content {
@@ -299,7 +309,6 @@ header .navigation a {
   margin-bottom: 5px;
 }
 
-
 .copy-button {
   background-color: #256fd0;
   color: #ffffff;
@@ -308,7 +317,7 @@ header .navigation a {
   border-radius: 4px;
   cursor: pointer;
   font-size: 14px;
-  margin-left: 10px; 
+  margin-left: 10px;
   transition: background-color 0.3s;
 }
 
@@ -318,11 +327,10 @@ header .navigation a {
 
 .switch-container {
   display: flex;
-  flex-direction:row;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
-  padding:5px;
-  
+  padding: 5px;
 }
 
 input[type="radio"] {
@@ -338,9 +346,8 @@ input[type="radio"] {
   margin: 0 10px;
 }
 
-
 input[type="radio"]:checked + label {
-  background-color:#27ebf9;
+  background-color: #27ebf9;
   display: block;
   border: solid greenyellow;
 }
@@ -403,16 +410,16 @@ input[type="radio"]:checked + label {
   border: 1px solid #ccc;
   border-radius: 5px;
   font-size: 1rem;
-  margin-top: 12px; 
+  margin-top: 12px;
 }
 
 .sbt {
-  display: inline-block; 
-  margin: 10px;;
+  display: inline-block;
+  margin: 10px;
   padding: 12px 24px;
   border: none;
   border-radius: 5px;
-  background-color: #256fd0; 
+  background-color: #256fd0;
   color: white;
   font-size: 1rem;
   cursor: pointer;
@@ -444,7 +451,7 @@ input[type="radio"]:checked + label {
 }
 
 .found {
-  background-color: #2196F3; /* Blue */
+  background-color: #2196f3; /* Blue */
   color: #fff;
 }
 
@@ -503,8 +510,8 @@ input[type="radio"]:checked + label {
   white-space: nowrap;
 }
 .stepsP {
-  display:flex ;
-  flex-direction:column;
+  display: flex;
+  flex-direction: column;
   padding-left: 20px;
 }
 
@@ -612,11 +619,9 @@ h4 {
   color: #fff;
 }
 
-
 /* #searchbt  commented for testing*/
 .codes button,
-#next-btn 
- {
+#next-btn {
   margin-top: 20px;
   padding: 10px 20px;
   background-color: #007bff;
@@ -671,8 +676,6 @@ h4 {
 #references a:hover {
   color: #004466;
 }
-
-
 
 .copy-button {
   transition: background-color 0.3s, color 0.3s;
@@ -729,20 +732,41 @@ h4 {
   display: none;
 }
 
-.language-cpp,.language-python {
+.language-cpp,
+.language-python {
   padding: 20px;
   margin: 0;
   font-size: 12px;
   white-space: pre-wrap;
 }
 
-
-#aim,#theory, #procedure, #code,
-#result, #quiz, 
-#practice,#applications,#references{
+#aim,
+#theory,
+#procedure,
+#code,
+#result,
+#quiz,
+#practice,
+#applications,
+#references {
   display: none;
 }
-#aim{
+#aim {
   display: block;
 }
 
+
+/* Under testing fo rsmaller screens  */
+@media screen and (max-width: 420px) {
+  .container {
+    margin: 0 auto;
+  }
+  .practical {
+    padding: 5px;
+    font-size: smaller;
+  }
+  .container {
+    padding: 5px;
+    margin: 0;
+  }
+}
