@@ -221,10 +221,10 @@ header .navigation a {
 .desc1 {
     padding: 10px;
     overflow-x: auto;
-}.stepsP {
-    
-    display:flex ;
-    flex-direction:column;
+}
+.stepsP {
+  padding-left: 10px;
+  overflow-x: auto;
 }
 .practical{
   padding: 5px ;
@@ -332,7 +332,7 @@ input[type="radio"] {
 .switch-container label {
   cursor: pointer;
   padding: 10px 20px;
-  background-color: #beb3ff;
+  background-color: #8227f9;
   color: #fff;
   border-radius: 5px;
   margin: 0 10px;
@@ -340,7 +340,7 @@ input[type="radio"] {
 
 
 input[type="radio"]:checked + label {
-  background-color: #9bb0ee;
+  background-color:#27ebf9;
   display: block;
   border: solid greenyellow;
 }
@@ -503,8 +503,9 @@ input[type="radio"]:checked + label {
   white-space: nowrap;
 }
 .stepsP {
-  display: flex;
-  flex-direction: column;
+  display:flex ;
+  flex-direction:column;
+  padding-left: 20px;
 }
 
 .anime {
@@ -744,3 +745,4 @@ h4 {
 #aim{
   display: block;
 }
+
