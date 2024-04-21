@@ -18,8 +18,11 @@
 
 <body>
     <header class="header">
+
         <div class="logo-container">
-            <img class="logo" src="images/logo.png" height="60px" alt="VLab">
+            <a href="https://www.vlab.andcollege.du.ac.in" rel="noopener" target="_blank">
+                <img class="logo" src="images/logo.png" height="60px" alt="VLab">
+            </a>
         </div>
         <h1 class="heading">V-LAB @ ANDC</h1>
         <div class="menu-toggle">
@@ -174,7 +177,7 @@
                     <div id="cppCode" class="code-block active">
                         <div class="code-content">
                             <pre>
-<code class="language-cpp">// programming language C++.
+<code class="language-cpp">// C++
 #include < iostream >
 using namespace std;
  
@@ -272,7 +275,7 @@ int main() {
                     </div>
                     <div id="pyCode" class="code-block" style="display: none;">
                         <div class="code-content">
-                            <pre><code class="language-python">#Programminng language Python.
+                            <pre><code class="language-python"># Python
 def linear_search(arr, target):
     """
     Performs linear search on the given array to find the target element.
@@ -391,7 +394,7 @@ if __name__ == "__main__":
                     <br><br><br>
                 </div>
                 <div class="your-turn" id="your_turn">
-                    <p id="para1"><b><u>Your Turn : </u></b></p><br>
+                    <label id="labyt"><b><u>Your turn : </u></b></label><br>
                     <label for="arrayInput">Enter an array (comma-separated):</label>
                     <input type="text" id="arrayInput" placeholder="e.g., 1, 2, 3, 4, 5">
 

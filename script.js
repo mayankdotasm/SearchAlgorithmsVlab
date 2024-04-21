@@ -8,16 +8,22 @@ document.addEventListener('DOMContentLoaded', function () {
             header.classList.remove('scrolled');
         }
     });
+
+    const menuToggle = document.querySelector('.menu-toggle');
+    const smlNav = document.querySelector('.smlNav');
+
+    menuToggle.addEventListener('click', function () {
+        smlNav.classList.toggle('show-menu');
+    });
     const searchButton = document.getElementById('searchbt');
     searchButton.addEventListener('click', performSearch);
 
-    const menuToggle = document.querySelector('.menu-toggle');
-    const navigation = document.querySelector('.navigation');
+    // const menuToggle = document.querySelector('.menu-toggle');
+    // const navigation = document.querySelector('.navigation');
 
-    menuToggle.addEventListener('click', function () {
-        navigation.classList.toggle('active');
-    });
- 
+    // menuToggle.addEventListener('click', function () {
+    //     navigation.classList.toggle('active');
+    // });
 
 });
 let topicElements = {
@@ -73,16 +79,35 @@ function copyCode(elementId) {
         console.error('Could not copy text: ', err);
     });
 }
+
+// // your turn section 
 function performSearch() {
     const arrayInput = document.getElementById("arrayInput").value;
     const targetInput = document.getElementById("targetInput").value;
 
-    const array = arrayInput.split(",").map(Number);
-    // console.log(array)
-    // console.log(null in array)
-    // if (NaN in array){
-    //     Windowalert("\n Enter numeric values only!!")
-    // }
+    // Split the input array by comma and trim each element to remove any extra spaces
+    const array = arrayInput.split(",").map(item => item.trim());
+
+    // Constraint 1: Check if all elements in the array are numeric or floating-point values
+    const isNumericArray = array.every(item => !isNaN(parseFloat(item)));
+    if (!isNumericArray) {
+        displayResults(["Input array must contain only numeric or floating-point values."]);
+        return;
+    }
+
+    // Constraint 2: Check if the array length is not longer than 15 elements
+    if (array.length > 15) {
+        displayResults(["Input array cannot have more than 15 elements."]);
+        return;
+    }
+
+    // Constraint 3: Check if the array contains only numeric or floating-point values
+    const isAlphanumeric = array.some(item => !/^-?\d*\.?\d+$/.test(item));
+    if (isAlphanumeric) {
+        displayResults(["Input array must contain only numeric or floating-point values."]);
+        return;
+    }
+
     const target = parseFloat(targetInput);
 
     const isSorted = checkSort(array);
@@ -90,38 +115,15 @@ function performSearch() {
     let searchType;
     if (isSorted) {
         searchType = "Binary Search";
-        binarySearchWithSteps(array, target);
+        binarySearchWithSteps(array.map(Number), target);
     } else {
         searchType = "Linear Search";
-        linearSearchWithSteps(array, target);
+        linearSearchWithSteps(array.map(Number), target);
     }
 
     displayResults([`Performing ${searchType}...`]);
 }
 
-
-// const changeButton = document.getElementById('changeButton');
-// const cppCode = document.getElementById('cppCode');
-// const pyCode = document.getElementById('pyCode');
-
-// changeButton.addEventListener('click', function () {
-//     // Toggle the active class for code blocks
-//     cppCode.classList.toggle('active');
-//     pyCode.classList.toggle('active');
-
-//     // Toggle arrow direction
-//     const arrow = changeButton.querySelector('.arrow');
-//     arrow.textContent = arrow.textContent === '➡️' ? '⬅️' : '➡️';
-// });
-
-// const copyButtons = document.querySelectorAll('.copy-button');
-// copyButtons.forEach(function (button) {
-// new ClipboardJS(button);
-
-// button.addEventListener('click', function () {
-//     alert('Code copied to clipboard!');
-// });
-// });
 
 
 function checkSort(array) {
@@ -242,6 +244,7 @@ async function linearSearchWithSteps(array, target) {
     }
 }
 
+
 function displayResults(statements) {
     const resultsContainer = document.getElementById("resultsContainer");
     resultsContainer.innerHTML = "";
@@ -361,3 +364,42 @@ nextButton.addEventListener("click", () => {
 });
 
 loadQuestion();
+
+// Function to set equal width to all choices for larger screens
+function setEqualWidth() {
+    const choices = document.querySelectorAll('.choice');
+    let maxWidth = 300;
+
+    // Find the maximum width among the choices
+    choices.forEach(choice => {
+        const choiceWidth = choice.getBoundingClientRect().width;
+        maxWidth = Math.max(maxWidth, choiceWidth);
+    });
+
+    // Set the maximum width to all choices
+    choices.forEach(choice => {
+        choice.style.width = maxWidth + 'px';
+    });
+}
+
+// Function to handle resizing and apply appropriate behavior
+function handleResize() {
+    const choices = document.querySelectorAll('.choice');
+   
+    if (window.innerWidth >= 768) {
+        setEqualWidth(); // Apply equal width for larger screens
+    } else if (window.innerWidth < 768 && window.innerWidth>380 ) {
+        choices.forEach(choice => {
+            choice.style.width = '500px';
+        });
+    }else{
+        // Reset width for smaller screens
+        choices.forEach(choice => {
+            choice.style.width = '310px';
+        });
+    }
+}
+
+// Call handleResize on page load and window resize
+window.addEventListener('load', handleResize);
+window.addEventListener('resize', handleResize);
