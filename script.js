@@ -281,7 +281,7 @@ const questions = [
     },
     {
         question: " Q5) When can binary search be applied?",
-        choices: ["Only on unsorted lists", "Only on lists of integers", "Only on sorted lists", "Only on small lists"],
+        choices: ["Only on unsorted throughout", "Only to data files", "Only on sorted lists", "Only on small lists"],
         correctAnswers: [2]
     },
     {
@@ -296,7 +296,7 @@ const questions = [
     },
     {
         question: " Q8) What are the advantages of Linear Search Over Binary Search?",
-        choices: ["The array is ordered", "Less number of comparison", "less time and space complexity", "Linear search can be used irrespective of whether the array is sorted or not"],
+        choices: ["Suitable for searching an element in a large list", "Needs less number of comparison", "Has low time and space complexity", "Used for both sorted and unsorted lists"],
         correctAnswers: [3]
     }
 ];
