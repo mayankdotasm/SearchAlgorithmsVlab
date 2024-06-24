@@ -35,23 +35,19 @@ let topicElements = {
     'result': document.getElementById('result'),
     'quiz': document.getElementById('quiz'),
     'references': document.getElementById('references'),
-    'applications': document.getElementById('applications')
+    'applications': document.getElementById('applications'),
+    'tnt': document.getElementById('tnt')
 };
 let currentTopic = 'aim'; // Default topic
 
 
 function switchContent(topic) {
     if (topic === currentTopic) {
-        return; // no need to switch if already on the selected topic
+        return; 
     }
-
-    // hide the current topic
+    
     topicElements[currentTopic].style.display = 'none';
-
-    //show the new topic
     topicElements[topic].style.display = 'block';
-
-    // update the current topic
     currentTopic = topic;
 }
 
@@ -85,23 +81,22 @@ function performSearch() {
     const arrayInput = document.getElementById("arrayInput").value;
     const targetInput = document.getElementById("targetInput").value;
 
-    // Split the input array by comma and trim each element to remove any extra spaces
+    
     const array = arrayInput.split(",").map(item => item.trim());
 
-    // Constraint 1: Check if all elements in the array are numeric or floating-point values
+    
     const isNumericArray = array.every(item => !isNaN(parseFloat(item)));
     if (!isNumericArray) {
         displayResults(["Input array must contain only numeric or floating-point values."]);
         return;
     }
 
-    // Constraint 2: Check if the array length is not longer than 15 elements
+  
     if (array.length > 15) {
         displayResults(["Input array cannot have more than 15 elements."]);
         return;
     }
 
-    // Constraint 3: Check if the array contains only numeric or floating-point values
     const isAlphanumeric = array.some(item => !/^-?\d*\.?\d+$/.test(item));
     if (isAlphanumeric) {
         displayResults(["Input array must contain only numeric or floating-point values."]);
