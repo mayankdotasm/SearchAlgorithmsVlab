@@ -90,8 +90,11 @@
                 <img class="icon" src="images/reference_img.png" height="60px" alt="REFERENCE">
                 <span>References</span>
             </button>
-
-            <!-- More navigation links -->
+            <button class="link" onclick="switchContent('tnt')">
+                <img class="icon" src="images/tnt_img.png" height="60px" alt="TEAMS & TOOLS">
+                <span>Teams & Tools</span>
+            </button>
+            
         </nav>
 
 
@@ -102,8 +105,8 @@
                 </div>
                 <div class="content">
                     <p>
-                        The aim of this practical is to implement an adaptive search algorithm that automatically
-                        performs linear search for unsorted collections and binary search for sorted collections.
+                        The aim of this Virtual lab is to implement an adaptive search algorithm that automatically
+                        performs linear search for an unsorted list and binary search for sorted list.
                     </p>
                 </div>
 
@@ -114,10 +117,10 @@
                 </div>
                 <div class="content">
                     <p>
-                        The adaptive search algorithm combines the efficiency of binary search for sorted collections
-                        and the simplicity of linear search for unsorted collections. It determines the nature of the
-                        given collection by checking if it is sorted or unsorted. Based on the result, it applies the
-                        appropriate search algorithm. If the collection is sorted, it performs binary search; otherwise,
+                        The adaptive search algorithm combines the efficiency of binary search for sorted list
+                        and the simplicity of linear search for unsorted list. It determines the nature of the
+                        given sequence of elements by checking if it is sorted or unsorted. Based on the result, it applies the
+                        appropriate search algorithm. If the list is sorted, it performs binary search; otherwise,
                         it resorts to linear search.
                     </p>
                 </div>
@@ -131,20 +134,21 @@
                         The procedure for implementing the adaptive search algorithm can be summarized as follows:
                     </p>
                     <ol id="steps" type="1">
-                        <li>Start by defining the target element that you want to find in the collection.</li>
-                        <li>Check if the collection is sorted:
+                        <li>Input the desired list.</li>
+                        <li> Take the target element to be searched in the input list from the user.</li>
+                        <li>Check if the list is sorted or unsorted:
                             <ol type="i">
-                                <li>If the collection is sorted, apply the binary search algorithm.</li>
-                                <li>If the collection is unsorted, apply the linear search algorithm.</li>
+                                <li>If the list is sorted, apply the binary search algorithm.</li>
+                                <li>If the list is unsorted, apply the linear search algorithm.</li>
                             </ol>
                         </li>
                         <li>If the binary search algorithm is applied:
                             <ol type="i">
-                                <li>Initialize the search range, which initially includes the entire sorted collection.
+                                <li>Initialize the search range, which initially includes the entire sorted list.
                                 </li>
                                 <li>Divide the search range in half and compare the target element with the middle
                                     element of the range.</li>
-                                <li>Adjust the search range based on the comparison, reducing it by half with each
+                                <li>Adjust the search range based on the The value of target element and its possibility in that range iteratively by reducing it by half with each
                                     iteration until the target element is found or the search range is empty.</li>
                                 <li>If the target element is found, return the index of the element. If the search range
                                     is empty, conclude that the element is not present.</li>
@@ -152,9 +156,8 @@
                         </li>
                         <li>If the linear search algorithm is applied:
                             <ol type="i">
-                                <li>Iterate through each element in the unsorted collection, comparing it to the target
-                                    element.</li>
-                                <li>If a match is found, return the index of the element. If the entire collection is
+                                <li>Iterate sequentially in the unsorted list by comparing with the the target element.</li>
+                                <li>If a match is found, return the index of the element. If the entire list is
                                     traversed without finding a match, conclude that the element is not present.</li>
                             </ol>
                         </li>
@@ -215,7 +218,7 @@ struct Search{
     'sorted' (integer): Indicates whether the search result or item is sorted.
     This structure can be utilized to organize and store information
         related to search operations, such as maintaining the index and sorted
-        status of search results in a collection or array.
+        status of search results in a list.
     */
         int index;
         int sorted;
@@ -225,7 +228,7 @@ Search adaptiveSearch(const int* arr, int size, int target){
     Search searchResult;
     searchResult.sorted =0;
     searchResult.index =-1;
-    // Check if the array is sorted
+    // Check if the list is sorted
     bool isSorted = true;
     for (int i = 1; i < size; ++i) {
         if (arr[i] < arr[i - 1]) {
@@ -246,14 +249,14 @@ Search adaptiveSearch(const int* arr, int size, int target){
 int main() {
     int sizeA,target,value;//sizeB,
     cin>>sizeA;//sizeB;
-    int collection[sizeA] ;
-    cout<<"Enter your array:\n";  
+    int list[sizeA] ;
+    cout<<"Enter your list:\n";  
     for (int i = 0;i< sizeA;i++){ 
         cin>>value;
-        collection[i]=value; } 
+        list[i]=value; } 
         cout<<"Enter the target: ";    cin>>target;
  
-    Search result = adaptiveSearch(collection, sizeof(collection) / sizeof(collection[0]), target);
+    Search result = adaptiveSearch(list, sizeof(list) / sizeof(list[0]), target);
  
  
     if(result.sorted){
@@ -278,11 +281,11 @@ int main() {
                             <pre><code class="language-python"># Python
 def linear_search(arr, target):
     """
-    Performs linear search on the given array to find the target element.
+    Performs linear search on the given list to find the target element.
  
     Args:
         arr (list): The list to be searched.
-        target: The element to be found in the array.
+        target: The element to be found in the list.
  
     Returns:
         int: The index of the target element if found, -1 otherwise.
@@ -295,10 +298,10 @@ def linear_search(arr, target):
  
 def binary_search(arr, target):
     """
-    Performs a binary search on the given sorted array to find the target element.
+    Performs a binary search on the given sorted list to find the target element.
     Args:
         arr (list): The sorted list to be searched.
-        target: The element to be found in the array.
+        target: The element to be found in the list.
     Returns:
         int: The index of the target element if found, -1 otherwise.
     """
@@ -315,28 +318,28 @@ def binary_search(arr, target):
  
 def main():
     # Take input from the user
-    arr = input("Enter the array (space-separated integers): ").split()
+    arr = input("Enter the list (space-separated integers): ").split()
     arr = [int(x) for x in arr]
     target = int(input("Enter the target element: "))
 
-    # Determine if the array is sorted
+    # Determine if the list is sorted
     is_sorted = sorted(arr) == arr
 
     # Perform the appropriate search
     if is_sorted:
-        print("Sorted array given.\nPerforming Binary Search.")
+        print("Sorted list given.\nPerforming Binary Search.")
         index = binary_search(arr, target)
         if index == -1:
-            print(f"The target {target} is not found in the sorted array.")
+            print(f"The target {target} is not found in the sorted list.")
         else:
-            print(f"The target {target} is found at index {index} in the sorted array.")
+            print(f"The target {target} is found at index {index} in the sorted list.")
     else:
-        print("Unsorted array found.\nPerforming Linear Search.")
+        print("Unsorted list found.\nPerforming Linear Search.")
         index = linear_search(arr, target)
         if index == -1:
-            print(f"The target {target} is not found in the unsorted array.")
+            print(f"The target {target} is not found in the unsorted list.")
         else:
-            print(f"The target {target} is found at index {index} in the unsorted array.")
+            print(f"The target {target} is found at index {index} in the unsorted list.")
 
 if __name__ == "__main__":
     main()
@@ -359,29 +362,28 @@ if __name__ == "__main__":
                 <div class="content">
                     <div class="desc1">
                         <p class="desc"><b><u>Example :</u></b><br><br>
-                            <b>If the Array is unsorted it performs Linear Search : </b><br><br>
-                            Suppose that the input array is = <b>[10, 13, 9, 18, 5, 11]</b> <br> We have to find the
-                            element <b>18</b> in the array. <br><br>
+                            <b>If the list is unsorted it performs Linear Search : </b><br><br>
+                            Suppose that the input list is = <b>[10, 13, 9, 18, 5, 11]</b> <br> and the target element to be found in the list is 18 <br><br>
                         </p>
                         <div class="anime" id="linearanime">
                             <img id="lsEx" src="images/LinearSearch 01.png" alt="Example of Linear Search">
                         </div>
                         <br><br><br>
-                        <p><b>If the Array is sorted it performs Binary Search : </b><br><br>
-                            Suppose that the input array is = <b>[17, 32, 45, 53, 57, 61, 79, 88]</b> <br> We have to
-                            find the element <b>78</b> in the array. <br><br></p>
+                        <p><b>If the list is sorted then perform Binary Search : </b><br><br>
+                            Suppose that the input list is = <b>[17, 32, 45, 53, 57, 61, 79, 88]</b> <br> We have to
+                            find the element <b>79</b> in the list. <br><br></p>
                         <div class="anime" id="binaryanime">
                             <div class="stepsP">
                                 <ol type="a">
                                     <li>Mid index: (0 + 7) / 2 = 3</li>
                                     <li>Since 53 is less than the target value of 79, we narrow down the search range to
-                                        the right half of the array.</li>
+                                        the right half of the list.</li>
                                     <li>Mid index: (4 + 7) / 2 = 5</li>
                                     <li>Since 61 is less than the target value of 79, we again narrow down the search
                                         range to the right half of the remaining elements.</li>
                                     <li>Mid index: (6 + 7) / 2 = 6</li>
                                     <li>The mid-value is equal to the target value of 79, so the search is successful.
-                                        The index 6 represents the position of the target value 79 in the sorted array.
+                                        The index 6 represents the position of the target value 79 in the sorted list.
                                     </li>
                                 </ol>
                             </div>
@@ -395,7 +397,7 @@ if __name__ == "__main__":
                 </div>
                 <div class="your-turn" id="your_turn">
                     <label id="labyt"><b><u>Your turn : </u></b></label><br>
-                    <label for="arrayInput">Enter an array (comma-separated):</label>
+                    <label for="arrayInput">Enter an list (comma-separated):</label>
                     <input type="text" id="arrayInput" placeholder="e.g., 1, 2, 3, 4, 5">
 
                     <label for="targetInput">Enter a target element:</label>
@@ -407,6 +409,7 @@ if __name__ == "__main__":
 
                     <div id="resultsContainer"></div>
                 </div>
+                *&#8635;Rotate for smaller screens
             </div>
 
             <div class="container" id="result">
@@ -415,8 +418,8 @@ if __name__ == "__main__":
                 </div>
                 <div class="content">
                     <p>
-                        The adaptive search algorithm will either return the index of the target element if it is found
-                        in the collection or -1 if the element is not present
+                        The adaptive search algorithm will apply appropriate searching algorithm (linear/binary) as per the ordering of the elements in the input list. It will return the index of the target element if it is found
+                        in the list or -1 if the element is not present
                     </p>
                 </div>
             </div>
@@ -459,22 +462,39 @@ if __name__ == "__main__":
                     References
                 </div>
                 <div class="content">
-
-                    <p>Here are some references for further exploration:</p>
                     <ul class="stepsP ref">
-                        <li><span>Introduction to Algorithms (CLRS):</span>
-                            <span>by Thomas H. Cormen, Charles E. Leiserson, Ronald L. Rivest, and Clifford Stein</span>
+                        <li><span>Introduction to Algorithms (CLRS)[4th ed]:</span>
+                            <span>by Thomas H. Cormen, Charles E. Leiserson, Ronald L. Rivest, and Clifford Stein, MIT Press.</span>
                         </li>
-                        <li><span>Grokking Algorithms:</span>
-                            <span>by Aditya Bhargava</span>
+                        <li><span>Grokking Algorithms [1st ed]:</span>
+                            <span>by Aditya Bhargava, Simon and Schuster</span>
                         </li>
-                        <li><span>The Algorithm Design Manual:</span>
-                            <span> by Steven S. Skiena</span>
-                        </li>
-
                     </ul>
                 </div>
             </div>
+            <div class="container" id="tnt">
+                <div class="title">
+                    Teams & Tools
+                </div>
+                <div class="content">
+                    <span>Students</span>
+                    <ul class="stepsP ref">
+                        <li><span>Mayank Kumar</span></li>
+                        <li><span>Nishant Pratap Singh</span></li>
+                    </ul>
+                    <span>Mentors</span>
+                    <ul class="stepsP ref">
+                        <li><span>Prof. Sharnjit Kaur</span></li>
+                        <li><span>Ms. Gunjan Rani</span></li>
+                    </ul>
+                    <span>Tools Used</span>
+                    <ul class="tools">
+                        <li><span>Vanilla HTML, CSS, JS - for creating the web page</span></li>
+                        <li><span>Figma - for designing figures and UI mockups</span></li>
+                    </ul>
+                </div>
+            </div>
+            
     </div>
     </section>
     <script>

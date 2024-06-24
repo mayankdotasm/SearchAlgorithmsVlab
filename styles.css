@@ -121,8 +121,8 @@ header .navigation a {
   flex-direction: column;
   align-items: center;
   text-align: center;
-  height: 105px;
-  width: 114px;
+  height: 100px;
+  width: 110px;
   margin: 20px;
   padding: 10px;
   border-radius: 20px;
@@ -327,9 +327,11 @@ header .navigation a {
 }
 
 .practical .container .title {
-  font-size: 1.5rem;
+  font-size: 24px;
   font-weight: bold;
-  margin-bottom: 10px;
+  color: #333;
+  text-align: center;
+  margin-bottom: 20px;
 }
 
 .practical .container .content {
@@ -782,7 +784,8 @@ h4 {
 #quiz,
 #practice,
 #applications,
-#references {
+#references,
+#tnt {
   display: none;
 }
 #aim {
@@ -837,3 +840,84 @@ h4 {
     width: 340px;
   }
 }
+
+/* Teams and tools */
+#tnt .container {
+  width: 80%;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  font-family: 'Arial', sans-serif;
+}
+
+#tnt .container .title {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+#tnt .container .content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+#tnt .container .content span {
+  font-size: 18px;
+  font-weight: 600;
+  color: #555;
+}
+
+#tnt .stepsP, #tnt .tools {
+  list-style-type: none;
+  padding: 0;
+  margin: 10px 0;
+}
+
+#tnt .stepsP li, #tnt .tools li {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  transition: background-color 0.3s ease;
+}
+
+#tnt .stepsP li:hover, #tnt .tools li:hover {
+  background-color: #f1f1f1;
+}
+
+#tnt .stepsP li span, #tnt .tools li span {
+  font-size: 16px;
+  color: #333;
+}
+
+@media (max-width: 768px) {
+  #tnt .container {
+      width: 100%;
+      padding: 10px;
+  }
+
+  #tnt .container .title {
+      font-size: 20px;
+  }
+
+  #tnt .container .content span {
+      font-size: 16px;
+  }
+
+  #tnt .stepsP li, #tnt .tools li {
+      padding: 8px;
+  }
+
+  #tnt .stepsP li span, #tnt .tools li span {
+      font-size: 14px;
+  }
+}
+
