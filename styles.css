@@ -897,13 +897,20 @@ h4 {
   font-size: 16px;
   color: #333;
 }
-
+#tnt .content a{
+  text-decoration:none;
+}
+#rott{
+  display: none;
+}
 @media (max-width: 768px) {
   #tnt .container {
       width: 100%;
       padding: 10px;
   }
-
+  #rott{
+    display: block;
+  }
   #tnt .container .title {
       font-size: 20px;
   }
