@@ -120,7 +120,6 @@ header .nav-menu a:hover {
   text-align: center;
   height: 100px;
   width: 110px;
-  margin: 20px;
   padding: 10px;
   border-radius: 20px;
   text-decoration: none;
@@ -212,9 +211,10 @@ header .nav-menu a:hover {
   .pageview .navigation .link {
     border-radius: 12px;
     padding-top: 10px;
-    min-width: 60px;
-    height: 80px;
+    min-width: 58px;
+    height: 72px;
     margin: 5px;
+    border-width: 2px;
   }
 
   .pageview .navigation .link img {
