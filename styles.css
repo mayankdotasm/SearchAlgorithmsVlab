@@ -18,60 +18,61 @@ body {
 
 /* Header styles */
 .header {
-  height: 12vh;
-  width: 100%;
-  background-color: rgb(0, 52, 65, 1);
-  color: #fff;
   display: flex;
   align-items: center;
-  padding: 10px;
+  justify-content: space-between;
   position: sticky;
   top: 0;
+  height: 12vh;
+  width: 100%;
+  padding: 10px;
+  background-color: rgb(0, 52, 65, 1);
+  color: #fff;
   z-index: 1000;
 }
 
-.logo-container {
+.logo {
+  margin-left: 10px;
   margin-right: 10px;
 }
-
-.logo {
+.logo-img{
   height: 60px;
 }
 
-.heading {
-  font-size: 1.5rem;
-  margin-right: auto;
+.vlabtitle {
+  /* position: absolute; */
+  padding-left: 19px;
+  left: 50%;
+  /* transform: translateX(-50%); */
+  text-align: center;
 }
-
-.header .navigation {
-  display: flex;
-  list-style: none;
-  gap: 2rem;
-}
-.header .navigation ul {
-  display: flex;
-  list-style: none;
-  justify-content: space-between;
-  padding: 0;
-}
-header .navigation li {
-  font-size: 20px;
-  list-style: none;
-  margin-left: 20px;
-  padding: 13px 20px;
-  border-radius: 10px;
-}
-
-header .navigation li:hover {
-  background: rgba(0, 139, 139, 0.74);
+.menu-toggle {
+  display: none;
+  font-size: 24px;
   cursor: pointer;
+  font-weight: bold;
+  padding-right: 10px;
 }
 
-header .navigation a {
-  color: rgb(255, 255, 255);
+
+.nav-menu {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex: 1;
+}
+.nav-menu a {
+  margin-left: 15px;
+  padding: 15px;
   text-decoration: none;
   font-weight: 400;
   border-radius: 3px;
+  color: #ffffff;
+}
+
+header .nav-menu a:hover {
+  background: rgba(111, 248, 248, 0.74);
+  cursor: pointer;
 }
 
 .h1title {
@@ -84,17 +85,13 @@ header .navigation a {
   padding-bottom: 10px;
   padding: auto;
   padding-bottom: 5px;
-  /* position: sticky;
-  top: 90px;
-  z-index: 1000; */
   width: 100%;
 }
 
 /* Navigation styles */
 .pageview {
-  display: flex;
-  justify-content: center;
-
+  display: grid;
+  place-items: center;
   padding: 10px 0;
   position: sticky;
   flex-direction: column;
@@ -157,9 +154,7 @@ header .navigation a {
   color: #333;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
-.menu-toggle {
-  display: none;
-}
+
 /* Responsive adjustments */
 @media screen and (max-width: 840px) {
   .header {
@@ -169,10 +164,45 @@ header .navigation a {
     padding: 5px;
   }
 
-  .header .heading {
+  .header .vlabtitle{
     margin-right: auto;
-    /* margin-left: auto; */
-    font-size: 1.2rem;
+ 
+    font-size: 0.75rem;
+  }
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-menu {
+    position: fixed;
+    top: 0;
+    right: -250px;
+    height: 100%;
+    width: 200px;
+    flex-direction: column;
+    justify-content: center;
+    background-color: rgba(4, 74, 74, 0.74);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(8px);
+    transition: right 0.4s ease;
+  }
+
+  .nav-menu a {
+    margin: 10px 0;
+    text-align: center;
+  }
+
+  .nav-menu .close-btn {
+    display: block;
+    align-self: flex-end;
+    margin: 10px;
+    font-size: 24px;
+    cursor: pointer;
+    font-weight: bold;
+  }
+
+  .nav-menu.show {
+    right: 0;
   }
   .pageview .navigation {
     margin-top: 10px;
@@ -193,21 +223,6 @@ header .navigation a {
 
   .pageview .navigation .link span {
     font-size: 0.7rem;
-  }
-
-  .header .smlNav .navigation {
-    display: none;
-  }
-  .navigation {
-    transition: transform 0.3s ease;
-  }
-
-  .show-menu {
-    transform: translateY(0%);
-  }
-
-  .hide-menu {
-    transform: translateY(-100%);
   }
   .practical {
     margin-left: 0px;
@@ -232,17 +247,7 @@ header .navigation a {
   #practice {
     overflow-x: auto;
   }
-  .menu-toggle {
-    display: block;
-    cursor: pointer;
-  }
 
-  .toggle-lines {
-    width: 30px;
-    height: 4px;
-    background-color: #ffffff;
-    margin: 6px 0;
-  }
   .code-content {
     overflow-x: scroll;
     width: 700px;
@@ -264,11 +269,15 @@ header .navigation a {
     height: auto;
   }
   .choices {
+    display: grid;
+  place-items: center;
     justify-content: space-between;
+
   }
 
   .choice {
     flex: 0 0 calc(25% - 10px);
+
   }
   .centered-content .your-turn {
     width: 550px;
@@ -279,6 +288,11 @@ header .navigation a {
   }
 }
 
+@media (min-width: 840px) {
+  .nav-menu .close-btn {
+    display: none;
+  }
+}
 /* Practical section */
 .practical {
   padding: 15px;
@@ -427,59 +441,82 @@ input[type="radio"]:checked + label {
   align-items: center;
   justify-content: center;
   margin-top: 20px;
-  padding: 20px;
-  border: 1px solid #ccc;
-  width:700px;
-  border-radius: 10px;
-  background-color: #f9f9f9;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add shadow for depth */
+  padding: 30px;
+  border: 1px solid #ddd;
+  width: 100%;
+  max-width: 700px;
+  border-radius: 12px;
+  background-color: #ffffff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
+}
+
+.your-turn:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 #labyt {
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   font-weight: bold;
-  margin-bottom: 20px; /* Increase spacing between paragraphs */
+  margin-bottom: 25px;
+  color: #333;
 }
 
 .your-turn label {
   font-weight: bold;
   display: block;
-  margin-top: 15px; /* Adjust spacing between label and input */
-  font-size: 1rem;
+  margin-top: 15px;
+  font-size: 1.1rem;
+  color: #555;
 }
 
 #arrayInput,
 #targetInput {
   width: 100%;
-  padding: 12px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  font-size: 1rem;
-  margin-top: 12px;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  margin-top: 15px;
+  transition: border-color 0.3s ease;
 }
+
+#arrayInput:focus,
+#targetInput:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
 .your-turn label,
 #arrayInput,
 #targetInput,
 .sbt {
   width: 100%;
-  max-width: 300px; /* Limit maximum width for better readability */
+  max-width: 350px;
 }
 
 .sbt {
-  margin-top: 20px; /* Adjust spacing between input and button */
-}
-.sbt {
-  display: inline-block;
-  margin: 10px;
-  padding: 12px 24px;
+  margin-top: 20px;
+  padding: 15px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #fff;
+  background-color: #007bff;
   border: none;
-  border-radius: 5px;
-  background-color: #256fd0;
-  color: white;
-  font-size: 1rem;
+  border-radius: 8px;
   cursor: pointer;
-  transition: background-color 0.3s;
+  transition: background-color 0.3s ease;
 }
+
+.sbt:hover {
+  background-color: #0056b3;
+}
+
+.sbt:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(0, 123, 255, 0.3);
+}
+
 
 .array-container {
   display: flex;
@@ -525,27 +562,7 @@ input[type="radio"]:checked + label {
     opacity: 1;
   }
 }
-/* #arrayInput,
-#targetInput {
-  width: 100%;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  font-size: 1rem;
-  margin-top: 5px;
-} */
 
-/* {
-      background-color: #007BFF;
-      color: #fff;
-      border: none;
-      border-radius: 5px;
-      padding: 10px 20px;
-      font-size: 1rem;
-      cursor: pointer;
-      margin-top: 10px;
-      transition: background-color 0.3s, color 0.3s;
-  } */
 #resultsContainer {
   margin-top: 20px;
   font-size: 1rem;
@@ -559,7 +576,6 @@ input[type="radio"]:checked + label {
   height: 50%;
   margin: 0 auto;
   overflow-x: scroll;
-  /* white-space: nowrap; */
 }
 .stepsP {
   display: flex;
@@ -572,27 +588,7 @@ input[type="radio"]:checked + label {
   margin-left: 10%;
 }
 
-/* .copy-button {
-  background-color: #256fd0;
-  color: #ffffff;
-  padding: 8px 16px;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  font-size: 14px;
-  margin-bottom: 10px;
-  transition: background-color 0.3s;
-  display: inline-flex;
-  align-items: center;
-}
 
-.copy-button i {
-  margin-right: 8px;
-}
-
-.copy-button.hide {
-  display: none;
-} */
 .anime {
   width: 480px;
   aspect-ratio: 3/1;
@@ -641,13 +637,15 @@ h4 {
 }
 
 .choices .choice {
+  width: 500px; 
   margin: 10px 0;
   padding: 10px;
   border: 1px solid rgb(12, 12, 12);
   border-radius: 6px;
   background-color: rgb(255, 255, 255);
   cursor: pointer;
-  transition: background-color 0.3s, color 0.3s;
+  transition: background-color 0.3s, color 0.3s; 
+  overflow-wrap: break-word;
 }
 
 .choices .choice:hover {
@@ -655,7 +653,7 @@ h4 {
   color: #fff;
 }
 
-/* #searchbt  commented for testing*/
+
 .codes button,
 #next-btn {
   margin-top: 20px;
@@ -721,7 +719,6 @@ h4 {
   background-color: #1a2230;
 }
 
-/* Quiz Styles */
 .choices {
   margin-top: 30px;
 }

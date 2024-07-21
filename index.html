@@ -18,28 +18,23 @@
 
 <body>
     <header class="header">
-
-        <div class="logo-container">
+        <div class="logo">
             <a href="https://www.vlab.andcollege.du.ac.in" rel="noopener" target="_blank">
-                <img class="logo" src="images/logo.png" height="60px" alt="VLab">
+                <img class="logo-img" src="images/logo.png" height="60px" alt="VLab">
             </a>
         </div>
-        <h1 class="heading">V-LAB @ ANDC</h1>
-        <div class="menu-toggle">
-            <div class="toggle-lines"></div>
-            <div class="toggle-lines"></div>
-            <div class="toggle-lines"></div>
+        <div class="vlabtitle">
+            <h1 class="">V-LAB @ ANDC</h1>
         </div>
-        <section class="smlNav">
-            <nav class="navigation">
-                <ul>
-                    <li><a href="https://www.vlab.andcollege.du.ac.in">Home</a></li>
-                    <li><a href="https://www.vlab.andcollege.du.ac.in#labs_section">Labs</a></li>
-                    <li><a href="https://www.vlab.andcollege.du.ac.in#team">Team</a></li>
-                    <li><a href="https://www.andcollege.du.ac.in">College Website</a></li>
-                </ul>
-            </nav>
-        </section>
+        <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+        <nav class="nav-menu" id="small-screen">
+            <div class="close-btn" onclick="toggleMenu()">✖</div>
+            <a href="https://www.vlab.andcollege.du.ac.in">Home</a>
+            <a href="https://www.vlab.andcollege.du.ac.in#labs_section">Labs</a>
+            <a href="https://www.vlab.andcollege.du.ac.in#team">Team</a>
+            <a href="https://www.andcollege.du.ac.in">College Website</a>
+        </nav>
+
     </header>
 
     <div class="h1title">
@@ -94,7 +89,7 @@
                 <img class="icon" src="images/tnt_img.png" height="60px" alt="TEAMS & TOOLS">
                 <span>Teams & Tools</span>
             </button>
-            
+
         </nav>
 
 
@@ -119,7 +114,8 @@
                     <p>
                         The adaptive search algorithm combines the efficiency of binary search for sorted list
                         and the simplicity of linear search for unsorted list. It determines the nature of the
-                        given sequence of elements by checking if it is sorted or unsorted. Based on the result, it applies the
+                        given sequence of elements by checking if it is sorted or unsorted. Based on the result, it
+                        applies the
                         appropriate search algorithm. If the list is sorted, it performs binary search; otherwise,
                         it resorts to linear search.
                     </p>
@@ -148,7 +144,8 @@
                                 </li>
                                 <li>Divide the search range in half and compare the target element with the middle
                                     element of the range.</li>
-                                <li>Adjust the search range based on the The value of target element and its possibility in that range iteratively by reducing it by half with each
+                                <li>Adjust the search range based on the value of target element and its possibility
+                                    in that range iteratively by reducing it by half with each
                                     iteration until the target element is found or the search range is empty.</li>
                                 <li>If the target element is found, return the index of the element. If the search range
                                     is empty, conclude that the element is not present.</li>
@@ -156,7 +153,8 @@
                         </li>
                         <li>If the linear search algorithm is applied:
                             <ol type="i">
-                                <li>Iterate sequentially in the unsorted list by comparing with the the target element.</li>
+                                <li>Iterate sequentially in the unsorted list by comparing with the the target element.
+                                </li>
                                 <li>If a match is found, return the index of the element. If the entire list is
                                     traversed without finding a match, conclude that the element is not present.</li>
                             </ol>
@@ -363,7 +361,8 @@ if __name__ == "__main__":
                     <div class="desc1">
                         <p class="desc"><b><u>Example :</u></b><br><br>
                             <b>If the list is unsorted it performs Linear Search : </b><br><br>
-                            Suppose that the input list is = <b>[10, 13, 9, 18, 5, 11]</b> <br> and the target element to be found in the list is 18 <br><br>
+                            Suppose that the input list is = <b>[10, 13, 9, 18, 5, 11]</b> <br> and the target element
+                            to be found in the list is 18. <br><br>
                         </p>
                         <div class="anime" id="linearanime">
                             <img id="lsEx" src="images/LinearSearch 01.png" alt="Example of Linear Search">
@@ -396,11 +395,11 @@ if __name__ == "__main__":
                     <br><br><br>
                 </div>
                 <div class="your-turn" id="your_turn">
-                    <label id="labyt"><b><u>Your turn : </u></b></label><br>
-                    <label for="arrayInput">Enter an list (comma-separated):</label>
+                    <label id="labyt"><b><u>Your turn </u></b></label><br>
+                    <label for="arrayInput">Enter an array</label>
                     <input type="text" id="arrayInput" placeholder="e.g., 1, 2, 3, 4, 5">
 
-                    <label for="targetInput">Enter a target element:</label>
+                    <label for="targetInput">Enter a target element</label>
                     <input type="text" id="targetInput" placeholder="e.g., 3">
 
                     <button class="sbt" id="searchbt" onclick="performSearch()">Search</button>
@@ -418,8 +417,9 @@ if __name__ == "__main__":
                 </div>
                 <div class="content">
                     <p>
-                        The adaptive search algorithm will apply appropriate searching algorithm (linear/binary) as per the ordering of the elements in the input list. It will return the index of the target element if it is found
-                        in the list or -1 if the element is not present
+                        The adaptive search algorithm will apply appropriate searching algorithm (linear/binary) as per
+                        the ordering of the elements in the input list. It will return the index of the target element
+                        if it is found in the list or -1 if the element is not present.
                     </p>
                 </div>
             </div>
@@ -463,11 +463,11 @@ if __name__ == "__main__":
                 </div>
                 <div class="content">
                     <ul class="stepsP ref">
-                        <li><span>Introduction to Algorithms (CLRS)[4th ed]:</span>
-                            <span>by Thomas H. Cormen, Charles E. Leiserson, Ronald L. Rivest, and Clifford Stein, MIT Press.</span>
+                        <li><span>Cormen, T. H., Leiserson, C. E., Rivest, R. L., Stein, C. (2022). Introduction to
+                                Algorithms, Fourth Edition. United Kingdom: MIT Press.</span>
                         </li>
-                        <li><span>Grokking Algorithms [1st ed]:</span>
-                            <span>by Aditya Bhargava, Simon and Schuster</span>
+                        <li><span>Bhargava, A. (2016). Grokking Algorithms: An Illustrated Guide for Programmers and
+                                Other Curious People. United States: Manning.</span>
                         </li>
                     </ul>
                 </div>
@@ -479,12 +479,17 @@ if __name__ == "__main__":
                 <div class="content">
                     <span>Students</span>
                     <ul class="stepsP ref">
-                        <li><a href="https://www.linkedin.com/in/mayankkumar-ai-passion/" rel="noopener" target="_blank"><span>Mayank Kumar - B. Sc. (H) CS</span></a></li>
-                        <li><a href="https://www.linkedin.com/in/nishant-pratap-singh-b96871257/" rel="noopener" target="_blank"><span>Nishant Pratap Singh  - B. Sc. (H) CS</span></a></li>
+                        <li><a href="https://www.linkedin.com/in/mayankkumar-ai-passion/" rel="noopener"
+                                target="_blank"><span>Mayank Kumar - B. Sc. (H) CS</span></a></li>
+                        <li><a href="https://www.linkedin.com/in/nishant-pratap-singh-b96871257/" rel="noopener"
+                                target="_blank"><span>Nishant Pratap Singh - B. Sc. (H) CS</span></a></li>
                     </ul>
                     <span>Mentors</span>
                     <ul class="stepsP ref">
-                        <li><span>Prof. Sharnjit Kaur</span></li>
+                        <li><span>Prof. Sharanjit Kaur</span></li>
+                        <li><span>Ms. Gunjan Rani</span></li>
+                        <li><span>Ms. Nishu singh</span></li>
+
                     </ul>
                     <span>Tools Used</span>
                     <ul class="tools">
@@ -493,11 +498,15 @@ if __name__ == "__main__":
                     </ul>
                 </div>
             </div>
-            
+
     </div>
     </section>
     <script>
         hljs.highlightAll();
+        function toggleMenu() {
+        const menu = document.querySelector('.nav-menu');
+        menu.classList.toggle('show');
+    }
     </script>
     <script src="script.js"></script>
 </body>

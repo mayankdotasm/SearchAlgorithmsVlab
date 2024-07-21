@@ -9,21 +9,9 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
-    const menuToggle = document.querySelector('.menu-toggle');
-    const smlNav = document.querySelector('.smlNav');
-
-    menuToggle.addEventListener('click', function () {
-        smlNav.classList.toggle('show-menu');
-    });
+    
     const searchButton = document.getElementById('searchbt');
     searchButton.addEventListener('click', performSearch);
-
-    // const menuToggle = document.querySelector('.menu-toggle');
-    // const navigation = document.querySelector('.navigation');
-
-    // menuToggle.addEventListener('click', function () {
-    //     navigation.classList.toggle('active');
-    // });
 
 });
 let topicElements = {
@@ -276,7 +264,7 @@ const questions = [
     },
     {
         question: " Q5) When can binary search be applied?",
-        choices: ["Only on unsorted throughout", "Only to data files", "Only on sorted lists", "Only on small lists"],
+        choices: ["Only on unsorted lists throughout", "Only to data files", "Only on sorted lists", "Only on small lists"],
         correctAnswers: [2]
     },
     {
@@ -291,7 +279,7 @@ const questions = [
     },
     {
         question: " Q8) What are the advantages of Linear Search Over Binary Search?",
-        choices: ["Suitable for searching an element in a large list", "Needs less number of comparison", "Has low time and space complexity", "Used for both sorted and unsorted lists"],
+        choices: ["Suitable for searching an element in a large list", "Needs less number of comparisons", "Has low time and space complexity", "Used for both sorted and unsorted lists"],
         correctAnswers: [3]
     }
 ];
@@ -360,41 +348,35 @@ nextButton.addEventListener("click", () => {
 
 loadQuestion();
 
-// Function to set equal width to all choices for larger screens
+
 function setEqualWidth() {
     const choices = document.querySelectorAll('.choice');
     let maxWidth = 300;
-
-    // Find the maximum width among the choices
     choices.forEach(choice => {
         const choiceWidth = choice.getBoundingClientRect().width;
         maxWidth = Math.max(maxWidth, choiceWidth);
     });
-
-    // Set the maximum width to all choices
     choices.forEach(choice => {
         choice.style.width = maxWidth + 'px';
     });
 }
 
-// Function to handle resizing and apply appropriate behavior
+
 function handleResize() {
     const choices = document.querySelectorAll('.choice');
-   
     if (window.innerWidth >= 768) {
-        setEqualWidth(); // Apply equal width for larger screens
+        setEqualWidth(); 
     } else if (window.innerWidth < 768 && window.innerWidth>380 ) {
         choices.forEach(choice => {
             choice.style.width = '500px';
         });
     }else{
-        // Reset width for smaller screens
         choices.forEach(choice => {
             choice.style.width = '310px';
         });
     }
 }
 
-// Call handleResize on page load and window resize
+
 window.addEventListener('load', handleResize);
 window.addEventListener('resize', handleResize);
