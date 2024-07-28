@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
-    // for headnav
+    // head nav
     const header = document.querySelector('.header');
     window.addEventListener('scroll', function () {
         if (window.scrollY > 10) {
@@ -9,11 +9,12 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
-    
+
     const searchButton = document.getElementById('searchbt');
     searchButton.addEventListener('click', performSearch);
 
 });
+
 let topicElements = {
     'aim': document.getElementById('aim'),
     'theory': document.getElementById('theory'),
@@ -31,9 +32,9 @@ let currentTopic = 'aim'; // Default topic
 
 function switchContent(topic) {
     if (topic === currentTopic) {
-        return; 
+        return;
     }
-    
+
     topicElements[currentTopic].style.display = 'none';
     topicElements[topic].style.display = 'block';
     currentTopic = topic;
@@ -64,22 +65,22 @@ function copyCode(elementId) {
     });
 }
 
-// // your turn section 
+// Practice section 
 function performSearch() {
     const arrayInput = document.getElementById("arrayInput").value;
     const targetInput = document.getElementById("targetInput").value;
 
-    
+
     const array = arrayInput.split(",").map(item => item.trim());
 
-    
+
     const isNumericArray = array.every(item => !isNaN(parseFloat(item)));
     if (!isNumericArray) {
         displayResults(["Input array must contain only numeric or floating-point values."]);
         return;
     }
 
-  
+
     if (array.length > 15) {
         displayResults(["Input array cannot have more than 15 elements."]);
         return;
@@ -348,35 +349,3 @@ nextButton.addEventListener("click", () => {
 
 loadQuestion();
 
-
-function setEqualWidth() {
-    const choices = document.querySelectorAll('.choice');
-    let maxWidth = 300;
-    choices.forEach(choice => {
-        const choiceWidth = choice.getBoundingClientRect().width;
-        maxWidth = Math.max(maxWidth, choiceWidth);
-    });
-    choices.forEach(choice => {
-        choice.style.width = maxWidth + 'px';
-    });
-}
-
-
-function handleResize() {
-    const choices = document.querySelectorAll('.choice');
-    if (window.innerWidth >= 768) {
-        setEqualWidth(); 
-    } else if (window.innerWidth < 768 && window.innerWidth>380 ) {
-        choices.forEach(choice => {
-            choice.style.width = '500px';
-        });
-    }else{
-        choices.forEach(choice => {
-            choice.style.width = '310px';
-        });
-    }
-}
-
-
-window.addEventListener('load', handleResize);
-window.addEventListener('resize', handleResize);

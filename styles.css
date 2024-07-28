@@ -35,15 +35,13 @@ body {
   margin-left: 10px;
   margin-right: 10px;
 }
-.logo-img{
+.logo-img {
   height: 60px;
 }
 
 .vlabtitle {
-  /* position: absolute; */
   padding-left: 19px;
   left: 50%;
-  /* transform: translateX(-50%); */
   text-align: center;
 }
 .menu-toggle {
@@ -53,7 +51,6 @@ body {
   font-weight: bold;
   padding-right: 10px;
 }
-
 
 .nav-menu {
   display: flex;
@@ -154,7 +151,6 @@ header .nav-menu a:hover {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-/* Responsive adjustments */
 @media screen and (max-width: 840px) {
   .header {
     flex-direction: row;
@@ -163,9 +159,9 @@ header .nav-menu a:hover {
     padding: 5px;
   }
 
-  .header .vlabtitle{
+  .header .vlabtitle {
     margin-right: auto;
- 
+
     font-size: 0.75rem;
   }
   .menu-toggle {
@@ -181,7 +177,7 @@ header .nav-menu a:hover {
     flex-direction: column;
     justify-content: center;
     background-color: rgba(4, 74, 74, 0.74);
-    -webkit-backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(8px);
     backdrop-filter: blur(8px);
     transition: right 0.4s ease;
   }
@@ -253,15 +249,13 @@ header .nav-menu a:hover {
     width: 700px;
   }
   #code.container {
-    width: 700px;
+    width: 640px;
   }
   .desc1 {
     padding: 10px;
-    overflow-x: auto;
   }
   .stepsP {
     padding-left: 10px;
-    overflow-x: auto;
   }
   #lsEx,
   #bsEx {
@@ -270,22 +264,26 @@ header .nav-menu a:hover {
   }
   .choices {
     display: grid;
-  place-items: center;
+    place-items: center;
     justify-content: space-between;
-
   }
 
   .choice {
     flex: 0 0 calc(25% - 10px);
+  }
 
-  }
-  .centered-content .your-turn {
-    width: 550px;
-  }
   .copy-button {
-    position:absolute;
+    position: absolute;
     padding-right: 500px;
   }
+  .ref-list li span,
+  .tools-list li span {
+    font-size: 14px;
+  }
+  #applications .stepsP li{
+    width: 280px;
+  }
+  
 }
 
 @media (min-width: 840px) {
@@ -293,13 +291,13 @@ header .nav-menu a:hover {
     display: none;
   }
 }
+
 /* Practical section */
 .practical {
   padding: 15px;
   background-color: #ffffff;
   display: flex;
   flex-direction: column;
-  /* flex-wrap: wrap; */
   justify-content: center;
   align-items: center;
 
@@ -312,7 +310,6 @@ header .nav-menu a:hover {
   flex: 0 0 calc(33.33% - 20px);
   margin: 20px;
   padding: 20px;
-  /* box-sizing: border-box; */
   border: 1px solid #ccc;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -334,7 +331,7 @@ header .nav-menu a:hover {
 .container.centered-content {
   border: 1px solid #ccc;
   border-radius: 10px;
-  margin: 20px;
+  margin: 5px;
   padding: 20px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   background-color: #fff;
@@ -422,14 +419,6 @@ input[type="radio"]:checked + label {
   display: block;
 }
 
-/* #proce {
-  font-size: 16px;
-  padding-left: 10%;
-}
-#pyCode,
-#pcb {
-  display: none;
-} */
 #lsEx,
 #bsEx {
   width: 400px;
@@ -460,6 +449,7 @@ input[type="radio"]:checked + label {
   font-weight: bold;
   margin-bottom: 25px;
   color: #333;
+  text-align: center;
 }
 
 .your-turn label {
@@ -516,7 +506,6 @@ input[type="radio"]:checked + label {
   outline: none;
   box-shadow: 0 0 0 4px rgba(0, 123, 255, 0.3);
 }
-
 
 .array-container {
   display: flex;
@@ -575,7 +564,6 @@ input[type="radio"]:checked + label {
   max-width: 100%;
   height: 50%;
   margin: 0 auto;
-  overflow-x: scroll;
 }
 .stepsP {
   display: flex;
@@ -587,7 +575,6 @@ input[type="radio"]:checked + label {
   margin: 0 auto;
   margin-left: 10%;
 }
-
 
 .anime {
   width: 480px;
@@ -625,26 +612,26 @@ h4 {
 
 #question {
   font-size: 18px;
+  margin-left: 5px;
   margin-top: 20px;
 }
 
 .choices {
   display: flex;
   flex-direction: column;
-  align-items: left;
+  align-items: flex-start;
   margin-top: 20px;
-  min-width: 800px;
 }
 
 .choices .choice {
-  width: 500px; 
+  width: 500px;
   margin: 10px 0;
   padding: 10px;
   border: 1px solid rgb(12, 12, 12);
   border-radius: 6px;
   background-color: rgb(255, 255, 255);
   cursor: pointer;
-  transition: background-color 0.3s, color 0.3s; 
+  transition: background-color 0.3s, color 0.3s;
   overflow-wrap: break-word;
 }
 
@@ -652,7 +639,6 @@ h4 {
   background-color: rgb(46, 132, 245);
   color: #fff;
 }
-
 
 .codes button,
 #next-btn {
@@ -671,44 +657,21 @@ h4 {
 #searchbt:hover {
   background-color: #6725d0;
 }
-#Applicatiion .content {
-  font-size: 18px;
-  color: #191919;
+
+.stepsP {
+  list-style: none;
+  padding-left: 0;
 }
 
-#Applicatiion p {
-  margin-bottom: 15px;
+.stepsP li {
+  margin-bottom: 10px;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #333;
 }
 
-#Applicatiion ul {
-  margin-bottom: 15px;
-}
-
-#Applicatiion li {
-  margin-bottom: 8px;
-}
-#references p {
-  font-size: 18px;
-  font-weight: bold;
-  color: #191919;
-}
-
-#references ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-#references li {
-  margin: 10px 0;
-}
-
-#references a {
-  text-decoration: none;
-  color: #0077cc;
-  transition: color 0.3s ease;
-}
-#references a:hover {
-  color: #004466;
+.stepsP span {
+  display: block;
 }
 
 .copy-button {
@@ -741,7 +704,7 @@ h4 {
 }
 
 .copy-button {
-  position:absolute;
+  position: absolute;
   top: 10px;
   right: 10px;
   padding: 5px 10px;
@@ -772,7 +735,64 @@ h4 {
   font-size: 12px;
   white-space: pre-wrap;
 }
+/* Reference */
+.references-list {
+  list-style-type: none;
+  padding: 0;
+}
 
+.references-list li {
+  margin-bottom: 10px;
+}
+
+.references-list span {
+  display: block;
+  padding: 10px;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+ul,
+ol {
+  padding-left: 0px;
+  margin: 10px 0;
+}
+
+li {
+  margin-bottom: 10px;
+}
+
+.steps-list ol {
+  margin-left: 10px;
+}
+
+.ref-list li,
+.tools-list li {
+  list-style-type: none;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.ref-list li:hover,
+.tools-list li:hover {
+  background-color: #f1f1f1;
+}
+
+.ref-list li span,
+.tools-list li span {
+  font-size: 16px;
+  color: #333;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* Tile control  */
 #aim,
 #theory,
 #procedure,
@@ -789,7 +809,7 @@ h4 {
   display: block;
 }
 
-/* Under testing fo rsmaller screens  */
+/* Adjustments */
 @media screen and (max-width: 420px) {
   .container {
     margin: 0 auto;
@@ -808,14 +828,16 @@ h4 {
   #bsEx {
     width: 60%;
     height: auto;
+    margin-left: -20px;
   }
   .your-turn {
     width: 320px;
+    margin: 5px;
   }
   .container.centered-content {
-    padding: 10px;
+    padding: 5px;
     margin: 0;
-    text-align: center;
+    text-align: left;
     width: 340px;
     max-width: auto;
   }
@@ -823,105 +845,21 @@ h4 {
     justify-content: space-between;
   }
 
-  .choice {
-    width: 320px;
+  .choices .choice {
+    width: 300px;
+    margin-left: 10px;
   }
   .centered-content.your-turn {
     width: 300px;
   }
-  .code-block{
-    overflow: scroll ;
+  .code-block {
+    overflow: scroll;
     width: 320px;
   }
-  #code.container{
-    width: 340px;
+  #code.container {
+    width: 330px;
+  }
+  #practice .stepsP li {
+    width: 220px;
   }
 }
-
-/* Teams and tools */
-#tnt .container {
-  width: 80%;
-  margin: 0 auto;
-  padding: 20px;
-  background-color: #f9f9f9;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  font-family: 'Arial', sans-serif;
-}
-
-#tnt .container .title {
-  font-size: 24px;
-  font-weight: bold;
-  color: #333;
-  text-align: center;
-  margin-bottom: 20px;
-}
-
-#tnt .container .content {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-#tnt .container .content span {
-  font-size: 18px;
-  font-weight: 600;
-  color: #555;
-}
-
-#tnt .stepsP, #tnt .tools {
-  list-style-type: none;
-  padding: 0;
-  margin: 10px 0;
-}
-
-#tnt .stepsP li, #tnt .tools li {
-  display: flex;
-  align-items: center;
-  padding: 10px;
-  background-color: #fff;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  margin-bottom: 10px;
-  transition: background-color 0.3s ease;
-}
-
-#tnt .stepsP li:hover, #tnt .tools li:hover {
-  background-color: #f1f1f1;
-}
-
-#tnt .stepsP li span, #tnt .tools li span {
-  font-size: 16px;
-  color: #333;
-}
-#tnt .content a{
-  text-decoration:none;
-}
-#rott{
-  display: none;
-}
-@media (max-width: 768px) {
-  #tnt .container {
-      width: 100%;
-      padding: 10px;
-  }
-  #rott{
-    display: block;
-  }
-  #tnt .container .title {
-      font-size: 20px;
-  }
-
-  #tnt .container .content span {
-      font-size: 16px;
-  }
-
-  #tnt .stepsP li, #tnt .tools li {
-      padding: 8px;
-  }
-
-  #tnt .stepsP li span, #tnt .tools li span {
-      font-size: 14px;
-  }
-}
-

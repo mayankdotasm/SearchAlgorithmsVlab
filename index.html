@@ -121,17 +121,16 @@
                     </p>
                 </div>
             </div>
+            <!-- Procedure Section -->
             <div class="container" id="procedure">
                 <div class="title">
                     Procedure
                 </div>
-                <div class="content" id="proce">
-                    <p>
-                        The procedure for implementing the adaptive search algorithm can be summarized as follows:
-                    </p>
-                    <ol id="steps" type="1">
+                <div class="content">
+                    <p>The procedure for implementing the adaptive search algorithm can be summarized as follows:</p>
+                    <ol class="steps-list">
                         <li>Input the desired list.</li>
-                        <li> Take the target element to be searched in the input list from the user.</li>
+                        <li>Take the target element to be searched in the input list from the user.</li>
                         <li>Check if the list is sorted or unsorted:
                             <ol type="i">
                                 <li>If the list is sorted, apply the binary search algorithm.</li>
@@ -140,21 +139,18 @@
                         </li>
                         <li>If the binary search algorithm is applied:
                             <ol type="i">
-                                <li>Initialize the search range, which initially includes the entire sorted list.
-                                </li>
+                                <li>Initialize the search range, which initially includes the entire sorted list.</li>
                                 <li>Divide the search range in half and compare the target element with the middle
                                     element of the range.</li>
-                                <li>Adjust the search range based on the value of target element and its possibility
-                                    in that range iteratively by reducing it by half with each
-                                    iteration until the target element is found or the search range is empty.</li>
+                                <li>Adjust the search range iteratively by reducing it by half with each iteration until
+                                    the target element is found or the search range is empty.</li>
                                 <li>If the target element is found, return the index of the element. If the search range
                                     is empty, conclude that the element is not present.</li>
                             </ol>
                         </li>
                         <li>If the linear search algorithm is applied:
                             <ol type="i">
-                                <li>Iterate sequentially in the unsorted list by comparing with the the target element.
-                                </li>
+                                <li>Iterate sequentially in the unsorted list by comparing with the target element.</li>
                                 <li>If a match is found, return the index of the element. If the entire list is
                                     traversed without finding a match, conclude that the element is not present.</li>
                             </ol>
@@ -163,9 +159,10 @@
                 </div>
             </div>
 
+
             <div class="container" id="code">
                 <div class="title">Code</div>
-                <p> Example programs:</p>
+                <p> Example programs</p>
                 <div class="switch-container">
                     <input class="togswt" type="radio" id="cppRadio" name="codeSwitch" checked>
                     <label for="cppRadio" onclick="toggleCode('cpp')">C++</label>
@@ -359,7 +356,7 @@ if __name__ == "__main__":
                 </div>
                 <div class="content">
                     <div class="desc1">
-                        <p class="desc"><b><u>Example :</u></b><br><br>
+                        <p class="desc"><b><u>Example</u></b><br><br>
                             <b>If the list is unsorted it performs Linear Search : </b><br><br>
                             Suppose that the input list is = <b>[10, 13, 9, 18, 5, 11]</b> <br> and the target element
                             to be found in the list is 18. <br><br>
@@ -395,7 +392,7 @@ if __name__ == "__main__":
                     <br><br><br>
                 </div>
                 <div class="your-turn" id="your_turn">
-                    <label id="labyt"><b><u>Your turn </u></b></label><br>
+                    <label id="labyt"><b><u>YOUR TURN </u></b></label><br>
                     <label for="arrayInput">Enter an array</label>
                     <input type="text" id="arrayInput" placeholder="e.g., 1, 2, 3, 4, 5">
 
@@ -403,6 +400,7 @@ if __name__ == "__main__":
                     <input type="text" id="targetInput" placeholder="e.g., 3">
 
                     <button class="sbt" id="searchbt" onclick="performSearch()">Search</button>
+                    <br>
 
                     <div class="array-container" id="arrayContainer"></div>
 
@@ -457,56 +455,57 @@ if __name__ == "__main__":
                     </p>
                 </div>
             </div>
+            <!-- References Section -->
             <div class="container" id="references">
                 <div class="title">
                     References
                 </div>
                 <div class="content">
-                    <ul class="stepsP ref">
-                        <li><span>Cormen, T. H., Leiserson, C. E., Rivest, R. L., Stein, C. (2022). Introduction to
-                                Algorithms, Fourth Edition. United Kingdom: MIT Press.</span>
-                        </li>
-                        <li><span>Bhargava, A. (2016). Grokking Algorithms: An Illustrated Guide for Programmers and
-                                Other Curious People. United States: Manning.</span>
-                        </li>
+                    <ul class="ref-list">
+                        <li><span>Cormen, T. H., Leiserson, C. E., Rivest, R. L., Stein, C. (2022). Introduction to
+                                Algorithms, Fourth Edition. United Kingdom: MIT Press.</span></li>
+                        <li><span>Bhargava, A. (2016). Grokking Algorithms: An Illustrated Guide for Programmers and
+                                Other Curious People. United States: Manning.</span></li>
                     </ul>
                 </div>
             </div>
+
+            <!-- Team & Tools Section -->
             <div class="container" id="tnt">
                 <div class="title">
                     Team & Tools
                 </div>
                 <div class="content">
                     <span>Students</span>
-                    <ul class="stepsP ref">
+                    <ul class="ref-list">
                         <li><a href="https://www.linkedin.com/in/mayankkumar-ai-passion/" rel="noopener"
                                 target="_blank"><span>Mayank Kumar - B. Sc. (H) CS</span></a></li>
                         <li><a href="https://www.linkedin.com/in/nishant-pratap-singh-b96871257/" rel="noopener"
                                 target="_blank"><span>Nishant Pratap Singh - B. Sc. (H) CS</span></a></li>
                     </ul>
                     <span>Mentors</span>
-                    <ul class="stepsP ref">
+                    <ul class="ref-list">
                         <li><span>Prof. Sharanjit Kaur</span></li>
                         <li><span>Ms. Gunjan Rani</span></li>
-                        <li><span>Ms. Nishu singh</span></li>
-
+                        <li><span>Ms. Nishu Singh</span></li>
                     </ul>
                     <span>Tools Used</span>
-                    <ul class="tools">
+                    <ul class="tools-list">
                         <li><span>Vanilla HTML, CSS, JS - for creating the web page</span></li>
                         <li><span>Figma - for designing figures and UI mockups</span></li>
                     </ul>
                 </div>
             </div>
 
+
     </div>
     </section>
     <script>
         hljs.highlightAll();
         function toggleMenu() {
-        const menu = document.querySelector('.nav-menu');
-        menu.classList.toggle('show');
-    }
+            const menu = document.querySelector('.nav-menu');
+            menu.classList.toggle('show');
+        }
     </script>
     <script src="script.js"></script>
 </body>
