@@ -280,10 +280,6 @@ header .nav-menu a:hover {
   .tools-list li span {
     font-size: 14px;
   }
-  #applications .stepsP li{
-    width: 280px;
-  }
-  
 }
 
 @media (min-width: 840px) {
@@ -800,7 +796,6 @@ a {
 #result,
 #quiz,
 #practice,
-#applications,
 #references,
 #tnt {
   display: none;

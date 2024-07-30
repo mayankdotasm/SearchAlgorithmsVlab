@@ -24,7 +24,6 @@ let topicElements = {
     'result': document.getElementById('result'),
     'quiz': document.getElementById('quiz'),
     'references': document.getElementById('references'),
-    'applications': document.getElementById('applications'),
     'tnt': document.getElementById('tnt')
 };
 let currentTopic = 'aim'; // Default topic
