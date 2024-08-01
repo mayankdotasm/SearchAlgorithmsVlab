@@ -521,18 +521,24 @@ input[type="radio"]:checked + label {
 }
 
 .checked {
-  background-color: #ffeb3b; /* Yellow */
+  background-color: #ffeb3b; 
 }
 
 .uniterated {
-  background-color: #e0e0e0; /* Light grey */
+  background-color: #e0e0e0; 
 }
 
 .found {
-  background-color: #2196f3; /* Blue */
-  color: #fff;
+  background-color: #2f9afe; 
+  color: rgb(255, 255, 255);
+}
+.foundg {
+  color: green;
 }
 
+.not-found {
+  color: red;
+}
 .blink {
   animation: blinker 0.5s linear infinite;
 }

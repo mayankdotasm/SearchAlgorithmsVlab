@@ -128,7 +128,23 @@ function displayArray(array, status) {
         arrayContainer.appendChild(elementDiv);
     }
 }
+function displayResults(statements) {
+    const resultsContainer = document.getElementById("resultsContainer");
+    resultsContainer.innerHTML = "";
 
+    for (let i = 0; i < statements.length; i++) {
+        const statementDiv = document.createElement("div");
+        statementDiv.innerHTML = statements[i];
+
+        if (statements[i].includes("Target element found at index")) {
+            statementDiv.classList.add("foundg");
+        } else if (statements[i] === "Target element not found in the array.") {
+            statementDiv.classList.add("not-found");
+        }
+
+        resultsContainer.appendChild(statementDiv);
+    }
+}
 
 async function binarySearchWithSteps(array, target) {
     const resultsContainer = document.getElementById("resultsContainer");
@@ -176,6 +192,7 @@ async function binarySearchWithSteps(array, target) {
         displayResults(steps);
     }
 }
+
 async function linearSearchWithSteps(array, target) {
     const resultsContainer = document.getElementById("resultsContainer");
     resultsContainer.innerHTML = "";
@@ -215,29 +232,9 @@ async function linearSearchWithSteps(array, target) {
         displayResults(steps);
     }
 }
-function displayResults(statements) {
-    const resultsContainer = document.getElementById("resultsContainer");
-    resultsContainer.innerHTML = ""; // Clear previous results
 
-    for (let i = 0; i < statements.length; i++) {
-        const statementDiv = document.createElement("div");
-        statementDiv.innerHTML = statements[i];
-        resultsContainer.appendChild(statementDiv);
-    }
-}
-
-async function sleep(ms, message) {
-    return new Promise(resolve => {
-        setTimeout(() => {
-            if (message) {
-                const resultsContainer = document.getElementById("resultsContainer");
-                const stepDiv = document.createElement("div");
-                stepDiv.innerHTML = message;
-                resultsContainer.appendChild(stepDiv);
-            }
-            resolve();
-        }, ms);
-    });
+async function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
 }
 
 // Quiz script
