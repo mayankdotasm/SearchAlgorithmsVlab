@@ -107,16 +107,15 @@ function performSearch() {
     displayResults([`Performing ${searchType}...`]);
 }
 
-
-
 function checkSort(array) {
-    for (let index = 1; index < array.length; index++) {
-        if (array[index] < array[index - 1]) {
+    for (let i = 1; i < array.length; i++) {
+        if (parseFloat(array[i]) < parseFloat(array[i - 1])) {
             return false;
         }
     }
     return true;
 }
+
 
 function displayArray(array, status) {
     const arrayContainer = document.getElementById("arrayContainer");
@@ -127,6 +126,103 @@ function displayArray(array, status) {
         elementDiv.textContent = array[index];
         elementDiv.classList.add("array-element", status);
         arrayContainer.appendChild(elementDiv);
+    }
+}
+
+
+async function binarySearchWithSteps(array, target) {
+    const resultsContainer = document.getElementById("resultsContainer");
+    resultsContainer.innerHTML = "";
+
+    let low = 0;
+    let high = array.length - 1;
+    let foundIndex = -1;
+    const steps = [];
+
+    while (low <= high && foundIndex === -1) {
+        const midValue = Math.floor((low + high) / 2);
+        const currentArray = array.slice(low, high + 1); // Only the current search range
+        displayArray(currentArray, "unchecked");
+
+        const stepElement = document.getElementsByClassName("array-element")[midValue - low];
+        stepElement.classList.remove("unchecked");
+        stepElement.classList.add("checked");
+        const stepStatement = `Checking element at index ${midValue}. Array: [${currentArray.join(', ')}]`;
+
+        steps.push(stepStatement);
+        displayResults(steps);
+        await sleep(1000);
+
+        if (array[midValue] === target) {
+            foundIndex = midValue;
+        } else if (array[midValue] < target) {
+            low = midValue + 1;
+        } else {
+            high = midValue - 1;
+        }
+    }
+
+    if (foundIndex !== -1) {
+        const stepArray = array.slice(low, high + 1);
+        const foundElement = document.getElementsByClassName("array-element")[foundIndex - low];
+        foundElement.classList.remove("checked");
+        foundElement.classList.add("found", "blink");
+        const foundStatement = `Target element found at index ${foundIndex}. Array: [${stepArray.join(', ')}]`;
+        steps.push(foundStatement);
+        displayResults(steps);
+    } else {
+        const notFoundStatement = "Target element not found in the array.";
+        steps.push(notFoundStatement);
+        displayResults(steps);
+    }
+}
+async function linearSearchWithSteps(array, target) {
+    const resultsContainer = document.getElementById("resultsContainer");
+    resultsContainer.innerHTML = "";
+
+    let foundIndex = -1;
+    const steps = [];
+
+    for (let index = 0; index < array.length && foundIndex === -1; index++) {
+        const stepArray = [...array];
+        displayArray(stepArray, "unchecked");
+
+        const stepElement = document.getElementsByClassName("array-element")[index];
+        stepElement.classList.remove("unchecked");
+        stepElement.classList.add("checked");
+        const stepStatement = `Iteration ${index + 1}: Checking element at index ${index}. Array: [${stepArray.join(', ')}]`;
+
+        steps.push(stepStatement);
+        displayResults(steps);
+        await sleep(1000);
+
+        if (stepArray[index] === target) {
+            foundIndex = index;
+        }
+    }
+
+    if (foundIndex !== -1) {
+        const stepArray = [...array];
+        const foundElement = document.getElementsByClassName("array-element")[foundIndex];
+        foundElement.classList.remove("checked");
+        foundElement.classList.add("found", "blink");
+        const foundStatement = `Target element found at index ${foundIndex}. Array: [${stepArray.join(', ')}]`;
+        steps.push(foundStatement);
+        displayResults(steps);
+    } else {
+        const notFoundStatement = "Target element not found in the array.";
+        steps.push(notFoundStatement);
+        displayResults(steps);
+    }
+}
+function displayResults(statements) {
+    const resultsContainer = document.getElementById("resultsContainer");
+    resultsContainer.innerHTML = ""; // Clear previous results
+
+    for (let i = 0; i < statements.length; i++) {
+        const statementDiv = document.createElement("div");
+        statementDiv.innerHTML = statements[i];
+        resultsContainer.appendChild(statementDiv);
     }
 }
 
@@ -142,101 +238,6 @@ async function sleep(ms, message) {
             resolve();
         }, ms);
     });
-}
-
-async function binarySearchWithSteps(array, target) {
-    const resultsContainer = document.getElementById("resultsContainer");
-    resultsContainer.innerHTML = "";
-
-    let low = 0;
-    let high = array.length - 1;
-    let foundIndex = -1;
-
-    for (let iteration = 0; low <= high && foundIndex === -1; iteration++) {
-        const midValue = Math.floor((low + high) / 2);
-        const stepArray = [...array];
-        displayArray(stepArray, "unchecked");
-
-        const stepElement = document.getElementsByClassName("array-element")[midValue];
-        stepElement.classList.remove("unchecked");
-        stepElement.classList.add("checked");
-        const stepStatement = `Iteration ${iteration + 1}: Checking element at index ${midValue}. Array: [${stepArray.join(', ')}]`;
-
-        await sleep(1000, stepStatement);
-
-        if (stepArray[midValue] === target) {
-            foundIndex = midValue;
-        } else if (stepArray[midValue] < target) {
-            const adjustStatement = `Element at index ${midValue} is smaller. Adjusting the search range.`;
-            displayArray(stepArray, "checked");
-            displayResults([stepStatement, adjustStatement]);
-            low = midValue + 1;
-        } else {
-            const adjustStatement = `Element at index ${midValue} is larger. Adjusting the search range.`;
-            displayArray(stepArray, "checked");
-            displayResults([stepStatement, adjustStatement]);
-            high = midValue - 1;
-        }
-    }
-
-    if (foundIndex !== -1) {
-        const stepArray = [...array];
-        const foundElement = document.getElementsByClassName("array-element")[foundIndex];
-        foundElement.classList.remove("checked");
-        foundElement.classList.add("found", "blink");
-        const foundStatement = `Target element found at index ${foundIndex}. Array: [${stepArray.join(', ')}]`;
-        displayResults([foundStatement]);
-    } else {
-        const notFoundStatement = "Target element not found in the array.";
-        displayResults([notFoundStatement]);
-    }
-}
-
-async function linearSearchWithSteps(array, target) {
-    const resultsContainer = document.getElementById("resultsContainer");
-    resultsContainer.innerHTML = "";
-
-    let foundIndex = -1;
-
-    for (let index = 0; index < array.length && foundIndex === -1; index++) {
-        const stepArray = [...array];
-        displayArray(stepArray, "unchecked");
-
-        const stepElement = document.getElementsByClassName("array-element")[index];
-        stepElement.classList.remove("unchecked");
-        stepElement.classList.add("checked");
-        const stepStatement = `Iteration ${index + 1}: Checking element at index ${index}. Array: [${stepArray.join(', ')}]`;
-
-        await sleep(1000, stepStatement);
-
-        if (stepArray[index] === target) {
-            foundIndex = index;
-        }
-    }
-
-    if (foundIndex !== -1) {
-        const stepArray = [...array];
-        const foundElement = document.getElementsByClassName("array-element")[foundIndex];
-        foundElement.classList.remove("checked");
-        foundElement.classList.add("found", "blink");
-        const foundStatement = `Target element found at index ${foundIndex}. Array: [${stepArray.join(', ')}]`;
-        displayResults([foundStatement]);
-    } else {
-        const notFoundStatement = "Target element not found in the array.";
-        displayResults([notFoundStatement]);
-    }
-}
-
-
-function displayResults(statements) {
-    const resultsContainer = document.getElementById("resultsContainer");
-    resultsContainer.innerHTML = "";
-
-    for (let i = 0; i < statements.length; i++) {
-        const statementDiv = document.createElement("div");
-        statementDiv.innerHTML = statements[i];
-        resultsContainer.appendChild(statementDiv);
-    }
 }
 
 // Quiz script
